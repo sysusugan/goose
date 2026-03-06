@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Tornado } from 'lucide-react';
-import { all_goose_modes, ModeSelectionItem } from '../settings/mode/ModeSelectionItem';
+import { createGooseModes, ModeSelectionItem } from '../settings/mode/ModeSelectionItem';
 import { useConfig } from '../ConfigContext';
 import {
   DropdownMenu,
@@ -10,10 +10,13 @@ import {
 } from '../ui/dropdown-menu';
 import { trackModeChanged } from '../../utils/analytics';
 import { getSession, updateSession } from '../../api';
+import { useLocalization } from '../../contexts/LocalizationContext';
 
 export const BottomMenuModeSelection = ({ sessionId }: { sessionId: string | null }) => {
+  const { t } = useLocalization();
+  const allGooseModes = createGooseModes(t);
   const [gooseMode, setGooseMode] = useState('auto');
-  const { config } = useConfig();
+  const { config, upsert } = useConfig();
 
   useEffect(() => {
     let cancelled = false;
@@ -43,6 +46,7 @@ export const BottomMenuModeSelection = ({ sessionId }: { sessionId: string | nul
       if (sessionId) {
         await updateSession({ body: { session_id: sessionId, goose_mode: newMode } });
       }
+      await upsert('GOOSE_MODE', newMode, false);
       setGooseMode(newMode);
       trackModeChanged(gooseMode, newMode);
     } catch (error) {
@@ -52,13 +56,13 @@ export const BottomMenuModeSelection = ({ sessionId }: { sessionId: string | nul
   };
 
   function getValueByKey(key: string) {
-    const mode = all_goose_modes.find((mode) => mode.key === key);
-    return mode ? mode.label : 'auto';
+    const mode = allGooseModes.find((mode) => mode.key === key);
+    return mode ? mode.label : t('modes.autonomous.label');
   }
 
   function getModeDescription(key: string) {
-    const mode = all_goose_modes.find((mode) => mode.key === key);
-    return mode ? mode.description : 'Automatic mode selection';
+    const mode = allGooseModes.find((mode) => mode.key === key);
+    return mode ? mode.description : t('modes.autonomous.description');
   }
 
   return (
@@ -71,7 +75,7 @@ export const BottomMenuModeSelection = ({ sessionId }: { sessionId: string | nul
           </span>
         </DropdownMenuTrigger>
         <DropdownMenuContent className="w-64" side="top" align="center">
-          {all_goose_modes.map((mode) => (
+          {allGooseModes.map((mode) => (
             <DropdownMenuItem key={mode.key} asChild>
               <ModeSelectionItem
                 mode={mode}

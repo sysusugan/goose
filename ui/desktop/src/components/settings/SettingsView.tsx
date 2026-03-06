@@ -19,6 +19,7 @@ import KeyboardShortcutsSection from './keyboard/KeyboardShortcutsSection';
 import LocalInferenceSection from './localInference/LocalInferenceSection';
 import { CONFIGURATION_ENABLED } from '../../updates';
 import { trackSettingsTabViewed } from '../../utils/analytics';
+import { useLocalization } from '../../contexts/LocalizationContext';
 
 export type SettingsViewOptions = {
   deepLinkConfig?: ExtensionConfig;
@@ -36,6 +37,7 @@ export default function SettingsView({
   setView: (view: View, viewOptions?: ViewOptions) => void;
   viewOptions: SettingsViewOptions;
 }) {
+  const { t } = useLocalization();
   const [activeTab, setActiveTab] = useState('models');
   const [tunnelDisabled, setTunnelDisabled] = useState(false);
   const hasTrackedInitialTab = useRef(false);
@@ -109,7 +111,7 @@ export default function SettingsView({
           <div className="bg-background-primary px-8 pb-8 pt-16">
             <div className="flex flex-col page-transition">
               <div className="flex justify-between items-center mb-1">
-                <h1 className="text-4xl font-light">Settings</h1>
+                <h1 className="text-4xl font-light">{t('settings.title')}</h1>
               </div>
             </div>
           </div>
@@ -128,7 +130,7 @@ export default function SettingsView({
                     data-testid="settings-models-tab"
                   >
                     <Bot className="h-4 w-4" />
-                    Models
+                    {t('settings.tabs.models')}
                   </TabsTrigger>
                   <TabsTrigger
                     value="local-inference"
@@ -136,11 +138,11 @@ export default function SettingsView({
                     data-testid="settings-local-inference-tab"
                   >
                     <HardDrive className="h-4 w-4" />
-                    Local Inference
+                    {t('settings.tabs.localInference')}
                   </TabsTrigger>
                   <TabsTrigger value="chat" className="flex gap-2" data-testid="settings-chat-tab">
                     <MessageSquare className="h-4 w-4" />
-                    Chat
+                    {t('settings.tabs.chat')}
                   </TabsTrigger>
                   <TabsTrigger
                     value="sharing"
@@ -148,7 +150,7 @@ export default function SettingsView({
                     data-testid="settings-sharing-tab"
                   >
                     <Share2 className="h-4 w-4" />
-                    Session
+                    {t('settings.tabs.session')}
                   </TabsTrigger>
                   <TabsTrigger
                     value="prompts"
@@ -156,7 +158,7 @@ export default function SettingsView({
                     data-testid="settings-prompts-tab"
                   >
                     <FileText className="h-4 w-4" />
-                    Prompts
+                    {t('settings.tabs.prompts')}
                   </TabsTrigger>
                   <TabsTrigger
                     value="keyboard"
@@ -164,11 +166,11 @@ export default function SettingsView({
                     data-testid="settings-keyboard-tab"
                   >
                     <Keyboard className="h-4 w-4" />
-                    Keyboard
+                    {t('settings.tabs.keyboard')}
                   </TabsTrigger>
                   <TabsTrigger value="app" className="flex gap-2" data-testid="settings-app-tab">
                     <Monitor className="h-4 w-4" />
-                    App
+                    {t('settings.tabs.app')}
                   </TabsTrigger>
                 </TabsList>
               </div>

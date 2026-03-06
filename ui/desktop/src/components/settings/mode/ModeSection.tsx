@@ -1,10 +1,13 @@
 import { useEffect, useState, useCallback } from 'react';
-import { all_goose_modes, ModeSelectionItem } from './ModeSelectionItem';
+import { createGooseModes, ModeSelectionItem } from './ModeSelectionItem';
 import { useConfig } from '../../ConfigContext';
 import { ConversationLimitsDropdown } from './ConversationLimitsDropdown';
 import { updateSession } from '../../../api';
+import { useLocalization } from '../../../contexts/LocalizationContext';
 
 export const ModeSection = ({ sessionId }: { sessionId?: string }) => {
+  const { t } = useLocalization();
+  const allGooseModes = createGooseModes(t);
   const [currentMode, setCurrentMode] = useState('auto');
   const [maxTurns, setMaxTurns] = useState<number>(1000);
   const { config, read, upsert } = useConfig();
@@ -55,8 +58,7 @@ export const ModeSection = ({ sessionId }: { sessionId?: string }) => {
 
   return (
     <div className="space-y-1">
-      {/* Mode Selection */}
-      {all_goose_modes.map((mode) => (
+      {allGooseModes.map((mode) => (
         <ModeSelectionItem
           key={mode.key}
           mode={mode}
@@ -67,7 +69,6 @@ export const ModeSection = ({ sessionId }: { sessionId?: string }) => {
         />
       ))}
 
-      {/* Conversation Limits Dropdown */}
       <ConversationLimitsDropdown maxTurns={maxTurns} onMaxTurnsChange={handleMaxTurnsChange} />
     </div>
   );

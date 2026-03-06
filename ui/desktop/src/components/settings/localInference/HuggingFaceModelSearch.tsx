@@ -1,4 +1,4 @@
-import { useState, useCallback, useRef } from 'react';
+import { useState, useEffect, useCallback, useRef } from 'react';
 import { Search, Download, ChevronDown, ChevronUp, Loader2, Star } from 'lucide-react';
 import { Button } from '../../ui/button';
 import {
@@ -10,6 +10,7 @@ import {
 } from '../../../api';
 import { toastError } from '../../../toasts';
 import { errorMessage } from '../../../utils/conversionUtils';
+import { useLocalization } from '../../../contexts/LocalizationContext';
 
 const formatBytes = (bytes: number): string => {
   if (bytes === 0) return 'unknown';
@@ -35,6 +36,8 @@ interface Props {
 }
 
 export const HuggingFaceModelSearch = ({ onDownloadStarted }: Props) => {
+  const { t } = useLocalization();
+  const tRef = useRef(t);
   const [query, setQuery] = useState('');
   const [results, setResults] = useState<HfModelInfo[]>([]);
   const [expandedRepo, setExpandedRepo] = useState<string | null>(null);
@@ -45,6 +48,10 @@ export const HuggingFaceModelSearch = ({ onDownloadStarted }: Props) => {
   const [directSpec, setDirectSpec] = useState('');
   const [error, setError] = useState<string | null>(null);
   const debounceRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  useEffect(() => {
+    tRef.current = t;
+  }, [t]);
 
   const doSearch = useCallback(async (q: string) => {
     if (!q.trim()) {
@@ -59,7 +66,6 @@ export const HuggingFaceModelSearch = ({ onDownloadStarted }: Props) => {
         query: { q, limit: 20 },
       });
       if (response.data) {
-        // Pre-fetch variants for all results and filter out repos with no suitable quantizations
         const modelsWithVariants = await Promise.all(
           response.data.map(async (model) => {
             try {
@@ -93,18 +99,20 @@ export const HuggingFaceModelSearch = ({ onDownloadStarted }: Props) => {
         });
 
         if (validResults.length === 0) {
-          setError('No GGUF models found for this query.');
+          setError(tRef.current('localInference.search.noResults'));
         }
       } else {
         console.error('Search response:', response);
         const errMsg = response.error
-          ? `Search error: ${JSON.stringify(response.error)}`
-          : 'Search returned no data.';
+          ? tRef.current('localInference.search.searchError', {
+              error: JSON.stringify(response.error),
+            })
+          : tRef.current('localInference.search.searchReturnedNoData');
         setError(errMsg);
       }
     } catch (e) {
       console.error('Search failed:', e);
-      setError('Search failed. Please try again.');
+      setError(tRef.current('localInference.search.searchFailed'));
     } finally {
       setSearching(false);
     }
@@ -204,14 +212,16 @@ export const HuggingFaceModelSearch = ({ onDownloadStarted }: Props) => {
   return (
     <div className="space-y-4">
       <div>
-        <h4 className="text-sm font-medium text-text-default mb-2">Search HuggingFace</h4>
+        <h4 className="text-sm font-medium text-text-default mb-2">
+          {t('localInference.search.title')}
+        </h4>
         <div className="relative">
           <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-text-muted" />
           <input
             type="text"
             value={query}
             onChange={(e) => handleQueryChange(e.target.value)}
-            placeholder="Search for GGUF models..."
+            placeholder={t('localInference.search.placeholder')}
             className="w-full pl-9 pr-4 py-2 text-sm border border-border-subtle rounded-lg bg-background-default text-text-default placeholder:text-text-muted focus:outline-none focus:border-accent-primary"
           />
           {searching && (
@@ -244,76 +254,62 @@ export const HuggingFaceModelSearch = ({ onDownloadStarted }: Props) => {
                     </div>
                     <div className="flex items-center gap-3 mt-0.5">
                       <span className="text-xs text-text-muted">
-                        ↓ {formatDownloads(model.downloads)}
+                        {formatDownloads(model.downloads)} downloads
                       </span>
+                      <span className="text-xs text-text-muted">★ {model.likes}</span>
                     </div>
                   </div>
-                  {isExpanded ? (
-                    <ChevronUp className="w-4 h-4 text-text-muted flex-shrink-0" />
+                  {loadingFiles.has(model.repo_id) ? (
+                    <Loader2 className="w-4 h-4 animate-spin text-text-muted" />
+                  ) : isExpanded ? (
+                    <ChevronUp className="w-4 h-4 text-text-muted" />
                   ) : (
-                    <ChevronDown className="w-4 h-4 text-text-muted flex-shrink-0" />
+                    <ChevronDown className="w-4 h-4 text-text-muted" />
                   )}
                 </button>
 
-                {isExpanded && (
-                  <div className="border-t border-border-subtle px-3 pb-3 space-y-1">
-                    {loadingFiles.has(model.repo_id) && (
-                      <div className="flex items-center gap-2 py-2 text-xs text-text-muted">
-                        <Loader2 className="w-3 h-3 animate-spin" />
-                        Loading variants...
-                      </div>
-                    )}
-                    {variants.map((variant, idx) => {
-                      const dlKey = `${model.repo_id}:${variant.quantization}`;
-                      const isStarting = downloading.has(dlKey);
-                      const isRecommended = idx === recommendedIndex;
-
-                      return (
-                        <div
-                          key={variant.quantization}
-                          className={`flex items-center justify-between py-2 px-2 rounded ${
-                            isRecommended
-                              ? 'bg-blue-500/5 border border-blue-500/20'
-                              : 'hover:bg-background-subtle'
-                          }`}
-                        >
-                          <div className="flex flex-col gap-0.5 min-w-0 flex-1 mr-3">
-                            <div className="flex items-center gap-2">
-                              <span className="text-xs font-mono font-medium text-text-default">
-                                {variant.quantization}
-                              </span>
-                              <span className="text-xs text-text-muted">
-                                {formatBytes(variant.size_bytes)}
-                              </span>
-                              {isRecommended && (
-                                <span className="inline-flex items-center gap-1 text-xs bg-blue-500 text-white px-1.5 py-0.5 rounded">
-                                  <Star className="w-3 h-3" />
-                                  Recommended
-                                </span>
-                              )}
-                            </div>
-                            {variant.description && (
-                              <span className="text-xs text-text-muted">{variant.description}</span>
-                            )}
-                          </div>
-                          <Button
-                            variant="outline"
-                            size="sm"
-                            disabled={isStarting}
-                            onClick={() => startDownload(model.repo_id, variant.quantization)}
+                {isExpanded && data && (
+                  <div className="px-3 pb-3 border-t border-border-subtle">
+                    <div className="space-y-2 mt-3">
+                      {variants.map((variant, index) => {
+                        const spec = `${model.repo_id}:${variant.quantization}`;
+                        const isDownloading = downloading.has(spec);
+                        const isRecommended = recommendedIndex === index;
+                        return (
+                          <div
+                            key={variant.filename}
+                            className="flex items-center gap-3 p-2 rounded-lg bg-background-subtle"
                           >
-                            {isStarting ? (
-                              <Loader2 className="w-3 h-3 animate-spin" />
-                            ) : (
-                              <>
-                                <Download className="w-3 h-3 mr-1" />
-                                Download
-                              </>
-                            )}
-                          </Button>
-                        </div>
-                      );
-                    })}
+                            <div className="flex-1 min-w-0">
+                              <div className="flex items-center gap-2">
+                                <span className="text-sm text-text-default truncate">
+                                  {variant.quantization}
+                                </span>
+                                {isRecommended && (
+                                  <span className="inline-flex items-center gap-1 text-[10px] px-1.5 py-0.5 rounded-full bg-yellow-500/15 text-yellow-500">
+                                    <Star className="w-3 h-3" /> {t('localInference.search.recommended')}
+                                  </span>
+                                )}
+                              </div>
+                              <div className="text-xs text-text-muted mt-0.5">
+                                {formatBytes(variant.size_bytes)} • {variant.filename}
+                              </div>
+                            </div>
+                            <Button
+                              size="sm"
+                              disabled={isDownloading}
+                              onClick={() => startDownload(model.repo_id, variant.quantization)}
+                            >
+                              {isDownloading ? (
+                                <Loader2 className="w-4 h-4 animate-spin" />
+                              ) : (
+                                <Download className="w-4 h-4" />
+                              )}
+                            </Button>
+                          </div>
+                        );
+                      })}
+                    </div>
                   </div>
                 )}
               </div>
@@ -322,39 +318,28 @@ export const HuggingFaceModelSearch = ({ onDownloadStarted }: Props) => {
         </div>
       )}
 
-      <div>
-        <h4 className="text-sm font-medium text-text-default mb-2">Direct Download</h4>
-        <p className="text-xs text-text-muted mb-2">
-          Specify a model directly:{' '}
-          <code className="bg-background-subtle px-1 rounded">user/repo:quantization</code>
-        </p>
+      <div className="space-y-2 pt-2 border-t border-border-subtle">
+        <label className="text-xs font-medium text-text-muted">{t('localInference.search.directDownloadLabel')}</label>
         <div className="flex gap-2">
           <input
             type="text"
             value={directSpec}
             onChange={(e) => setDirectSpec(e.target.value)}
-            placeholder="bartowski/Llama-3.2-1B-Instruct-GGUF:Q4_K_M"
+            placeholder={t('localInference.search.directDownloadPlaceholder')}
             className="flex-1 px-3 py-2 text-sm border border-border-subtle rounded-lg bg-background-default text-text-default placeholder:text-text-muted focus:outline-none focus:border-accent-primary"
-            onKeyDown={(e) => {
-              if (e.key === 'Enter') startDirectDownload();
-            }}
           />
           <Button
-            variant="outline"
-            size="sm"
-            disabled={!directSpec.trim() || downloading.has(`direct:${directSpec}`)}
             onClick={startDirectDownload}
+            disabled={!directSpec.trim() || downloading.has(`direct:${directSpec.trim()}`)}
           >
-            {downloading.has(`direct:${directSpec}`) ? (
+            {downloading.has(`direct:${directSpec.trim()}`) ? (
               <Loader2 className="w-4 h-4 animate-spin" />
             ) : (
-              <>
-                <Download className="w-4 h-4 mr-1" />
-                Download
-              </>
+              <Download className="w-4 h-4" />
             )}
           </Button>
         </div>
+        <p className="text-xs text-text-muted">{t('localInference.search.directDownloadHelp')}</p>
       </div>
     </div>
   );
