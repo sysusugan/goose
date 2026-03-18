@@ -6,7 +6,7 @@ sidebar_position: 110
 
 # 使用 AI 模型增强代码编辑
 
-[Developer 扩展](/docs/mcp/developer-mcp) 支持在 `str_replace` 命令中使用 AI 模型来增强代码编辑能力。配置完成后，它不再只是做简单字符串替换，而是会借助 AI 模型更智能地应用代码修改。
+[Developer 扩展](/zh-CN/docs/mcp/developer-mcp) 支持在 `str_replace` 命令中使用 AI 模型来增强代码编辑能力。配置完成后，它不再只是做简单字符串替换，而是会借助 AI 模型更智能地应用代码修改。
 
 使用专门擅长代码编辑的模型，可以降低主 LLM provider 的负担，同时提高准确性、质量和速度，并降低成本。这种增强方式带来的收益包括：
 
@@ -18,7 +18,7 @@ sidebar_position: 110
 
 ## 配置
 
-设置下面这些[环境变量](/docs/guides/environment-variables#enhanced-code-editing)即可启用 AI 驱动的代码编辑：
+设置下面这些[环境变量](/zh-CN/docs/guides/environment-variables#enhanced-code-editing)即可启用 AI 驱动的代码编辑：
 
 ```bash
 export GOOSE_EDITOR_API_KEY="your-api-key-here"

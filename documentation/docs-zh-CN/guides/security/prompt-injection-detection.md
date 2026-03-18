@@ -41,7 +41,7 @@ Prompt injection 指的是：攻击者把恶意指令藏在可执行内容中，
    [Allow Once] [Deny]
    ```
 5. **由你决定**是否继续执行。需要注意：
-   - 每次决策都会连同 finding ID 一起记录到 [goose system logs](/docs/guides/logs#system-logs)
+   - 每次决策都会连同 finding ID 一起记录到 [goose system logs](/zh-CN/docs/guides/logs#system-logs)
    - 如果你选择允许，命令仍会以你当前的完整权限继续执行
 
 **面对告警时，建议这样处理：**
@@ -72,7 +72,7 @@ Prompt injection 指的是：攻击者把恶意指令藏在可执行内容中，
   </TabItem>
   <TabItem value="config" label="goose config file">
 
-    你也可以把相关安全设置写入 [`config.yaml`](/docs/guides/config-files)：
+    你也可以把相关安全设置写入 [`config.yaml`](/zh-CN/docs/guides/config-files)：
 
     ```yaml
     SECURITY_PROMPT_ENABLED: true
@@ -91,7 +91,7 @@ Prompt injection 指的是：攻击者把恶意指令藏在可执行内容中，
 除了 prompt injection detection，goose 还会自动：
 - 在运行新的或更新过的 recipe 前给出警告
 - 在导入包含不可见 Unicode Tag Block 字符的 recipe 时给出警告
-- 在安装本地运行的 MCP server 扩展时，[检查已知恶意软件](/docs/troubleshooting/known-issues#malicious-package-detected)
+- 在安装本地运行的 MCP server 扩展时，[检查已知恶意软件](/zh-CN/docs/troubleshooting/known-issues#malicious-package-detected)
 :::
 
 ### 配置检测阈值 {#configuring-detection-threshold}
@@ -124,9 +124,9 @@ ML 检测可以：
 :::
 
 #### 自托管 ML 检测端点
-如果你想自己搭建分类 endpoint，请参考 [Classification API Specification](/docs/guides/security/classification-api-spec)。这个 API 遵循 Hugging Face Inference API 的格式。
+如果你想自己搭建分类 endpoint，请参考 [Classification API Specification](/zh-CN/docs/guides/security/classification-api-spec)。这个 API 遵循 Hugging Face Inference API 的格式。
 
 ## 另见
 
-- [goose Permission Modes](/docs/guides/goose-permissions) - 控制 goose 的自治程度
-- [Managing Tool Permissions](/docs/guides/managing-tools/tool-permissions) - 更细粒度地限制工具行为
+- [goose Permission Modes](/zh-CN/docs/guides/goose-permissions) - 控制 goose 的自治程度
+- [Managing Tool Permissions](/zh-CN/docs/guides/managing-tools/tool-permissions) - 更细粒度地限制工具行为

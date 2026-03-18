@@ -391,7 +391,7 @@ export GOOSE_SEARCH_PATHS='["/usr/local/bin", "~/custom/tools", "/opt/homebrew/b
 
 这些路径会在扩展执行命令时被 prepend 到系统 PATH 前面，因此你不需要修改全局 PATH 就能让扩展找到自定义工具。
 
-### 增强代码编辑
+### 增强代码编辑 {#enhanced-code-editing}
 
 这一组变量用于配置 Developer 扩展里 `str_replace` 工具的 [AI 增强代码编辑](/zh-CN/docs/guides/enhanced-code-editing)。三个变量都必须设置且非空才会启用。
 

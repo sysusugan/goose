@@ -4,12 +4,12 @@ title: "Classification API 规范"
 description: "介绍用于自托管 ML Prompt Injection 检测端点的 API 规范。"
 ---
 
-这个 API 规范定义了 goose 在使用 ML [prompt injection detection](/docs/guides/security/prompt-injection-detection) 时所要求的接口格式。
+这个 API 规范定义了 goose 在使用 ML [prompt injection detection](/zh-CN/docs/guides/security/prompt-injection-detection) 时所要求的接口格式。
 
 :::info 仅供自托管场景使用
 这份规范主要面向那些希望自己部署模型和分类端点的用户。
 
-如果你使用的是 Hugging Face 这类现成推理服务，通常只需要在 [prompt injection detection](/docs/guides/security/prompt-injection-detection) 设置里完成配置即可。
+如果你使用的是 Hugging Face 这类现成推理服务，通常只需要在 [prompt injection detection](/zh-CN/docs/guides/security/prompt-injection-detection) 设置里完成配置即可。
 :::
 
 goose 需要一个分类端点，能够分析输入文本并返回一个分数，用来表示这段内容有多大概率属于 prompt injection。该 API 遵循 Hugging Face Inference API 的文本分类格式，因此也兼容 [Hugging Face Inference Endpoints](https://huggingface.co/docs/inference-providers/providers/hf-inference)。

@@ -28,7 +28,7 @@ import { PanelLeft } from 'lucide-react';
 本指南会带你了解如何创建和使用 `.goosehints` 文件，用自定义指令和上下文来简化日常工作流。
 
 :::info 需要启用 Developer 扩展
-要使用 hints 文件，你需要先[启用](/docs/getting-started/using-extensions) `Developer` 扩展。
+要使用 hints 文件，你需要先[启用](/zh-CN/docs/getting-started/using-extensions) `Developer` 扩展。
 :::
 
 ## 创建 Hints 文件

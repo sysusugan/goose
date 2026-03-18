@@ -7,7 +7,7 @@ sidebar_position: 4
 # goose Mobile
 
 :::info Archived
-goose Mobile 已归档。现在从移动设备访问 goose 的推荐方式，是通过 [iOS 安全隧道访问](/docs/experimental/mobile-access)。
+goose Mobile 已归档。现在从移动设备访问 goose 的推荐方式，是通过 [iOS 安全隧道访问](/zh-CN/docs/experimental/mobile-access)。
 :::
 
 goose Mobile 是一个实验性的 Android 项目，灵感来自 goose 本体。它尝试把 open agent 直接带到手机上，用来自动执行多步骤任务、响应通知，甚至替代主屏工作流。

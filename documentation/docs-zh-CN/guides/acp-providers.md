@@ -8,7 +8,7 @@ sidebar_position: 46
 
 goose 支持把 [Agent Client Protocol (ACP)](https://agentclientprotocol.com/) agent 当作 provider 使用。ACP 是一种用于和 coding agent 通信的标准协议，目前已经有一个不断扩展的 [registry](https://github.com/agentclientprotocol/registry) 收录实现了该协议的 agent。
 
-ACP provider 会把 goose 的[扩展](/docs/getting-started/using-extensions)以 MCP server 的形式透传给 agent，因此 agent 可以直接调用你的扩展。
+ACP provider 会把 goose 的[扩展](/zh-CN/docs/getting-started/using-extensions)以 MCP server 的形式透传给 agent，因此 agent 可以直接调用你的扩展。
 
 :::warning Limitations
 - **暂不支持 fork 或 resume 既有 session**：你可以启动新会话，但 `goose session resume` 和 `goose session fork` 目前还不支持。

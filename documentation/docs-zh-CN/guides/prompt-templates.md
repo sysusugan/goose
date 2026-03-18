@@ -31,7 +31,7 @@ goose 的默认 prompt template 定义在代码库里，并在构建时内嵌到
 关于模板变量的修改方式，请先看 [Template Variable Syntax](#template-variable-syntax)。
 
 :::info Related Configuration
-除了 prompt templates，其他设置也会影响 goose 的行为或为它提供上下文，例如 [config files](/docs/guides/config-files)、[.goosehints](/docs/guides/context-engineering/using-goosehints) 以及 [skills](/docs/guides/context-engineering/using-skills)。
+除了 prompt templates，其他设置也会影响 goose 的行为或为它提供上下文，例如 [config files](/zh-CN/docs/guides/config-files)、[.goosehints](/zh-CN/docs/guides/context-engineering/using-goosehints) 以及 [skills](/zh-CN/docs/guides/context-engineering/using-skills)。
 :::
 
 ## 管理 Prompt Templates

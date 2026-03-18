@@ -6,7 +6,7 @@ sidebar_position: 60
 
 速率限制是指在特定时间窗口内，限制用户或应用向 LLM API 发送请求的数量。LLM Provider 会设置这类限制，用于管理资源并防止滥用。
 
-由于 goose 执行任务的速度很快，你可能会遇到 Provider 施加的速率限制。如果你经常触发限制，可以考虑升级当前 LLM 套餐以获得更高配额，或者选择 [内置速率限制能力的 Provider](/docs/getting-started/providers#configure-provider-and-model)：
+由于 goose 执行任务的速度很快，你可能会遇到 Provider 施加的速率限制。如果你经常触发限制，可以考虑升级当前 LLM 套餐以获得更高配额，或者选择 [内置速率限制能力的 Provider](/zh-CN/docs/getting-started/providers#configure-provider-and-model)：
 
 :::info
 goose 对这两类 Provider 都支持自动配置流程，会引导你完成 OAuth 账号创建和安全 API Key 生成。

@@ -14,13 +14,13 @@ import IconGoose from "@site/src/components/icons/goose";
 goose for VS Code 仍在活跃开发中，后续行为和配置方式可能继续变化。
 :::
 
-这个扩展通过 [Agent Client Protocol (ACP)](/docs/guides/acp-clients) 与 goose 通信。
+这个扩展通过 [Agent Client Protocol (ACP)](/zh-CN/docs/guides/acp-clients) 与 goose 通信。
 
 ## 安装扩展
 
 :::info Prerequisites
 - [VS Code](https://code.visualstudio.com/) 1.95.0 及以上
-- [goose CLI](/docs/getting-started/installation) 1.16.0 及以上
+- [goose CLI](/zh-CN/docs/getting-started/installation) 1.16.0 及以上
 :::
 
 1. 打开 [Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=block.vscode-goose)

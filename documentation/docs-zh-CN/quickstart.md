@@ -12,13 +12,13 @@ import WindowsDesktopInstallButtons from '@site/src/components/WindowsDesktopIns
 import LinuxDesktopInstallButtons from '@site/src/components/LinuxDesktopInstallButtons';
 import { PanelLeft } from 'lucide-react';
 
+:::warning 中文文档为预览版
+当前中文内容同步自英文 docs `main@f697e8d`（2026-03-18）。后续更新可能滞后，如有差异，请以英文原文为准。
+:::
+
 # 5 分钟上手 goose
 
 goose 是一个可扩展的开源 AI agent，它会通过自动化编码任务来提升你的软件开发效率。
-
-:::note 中文文档说明
-同步基线：英文 docs `main@f697e8d`（2026-03-18）。中文内容后续可能会滞后更新，如有差异，请以英文原文为准。
-:::
 
 这份快速上手会带你完成：
 

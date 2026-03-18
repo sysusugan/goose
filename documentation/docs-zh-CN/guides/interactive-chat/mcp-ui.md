@@ -15,7 +15,7 @@ import { PanelLeft } from 'lucide-react';
 基于 MCP Apps 或 MCP-UI 构建的扩展，可以让 goose Desktop 提供更可交互、参与感更强的用户体验。你不再只是阅读纯文本回复、手动输入提示词，而是可以直接点击和操作图形界面。
 
 :::info MCP Apps is the official specification
-[MCP Apps](/docs/tutorials/building-mcp-apps) 现在已经是交互式 UI 的官方 MCP 规范。MCP-UI 扩展在 goose 中仍然可用，但如果你要开发新扩展，推荐直接使用 MCP Apps。
+[MCP Apps](/zh-CN/docs/tutorials/building-mcp-apps) 现在已经是交互式 UI 的官方 MCP 规范。MCP-UI 扩展在 goose 中仍然可用，但如果你要开发新扩展，推荐直接使用 MCP Apps。
 :::
 
 :::warning Experimental Features
@@ -36,7 +36,7 @@ MCP Apps 通过官方的 [MCP Apps 规范](https://github.com/modelcontextprotoc
 4. 点击 `Launch` 在新窗口中打开对应应用
 
 :::info Apps Extension
-如果你想在侧边栏里看到 `Apps` 页面，需要先在 `Extensions` 页面启用 [Apps 扩展](/docs/mcp/apps-mcp)。你也可以用它来创建自己的独立 App。
+如果你想在侧边栏里看到 `Apps` 页面，需要先在 `Extensions` 页面启用 [Apps 扩展](/zh-CN/docs/mcp/apps-mcp)。你也可以用它来创建自己的独立 App。
 :::
 
 `Apps` 页面会展示三类内容：通过 Apps 扩展创建的自定义 HTML 应用、导入的 HTML 应用，以及已启用 MCP Apps 扩展中提供的应用。你可以在这些应用里点击按钮、填写表单、触发其它控件操作。只要通过 CORS 放行，它们就可以通过 MCP 调用工具和读取资源，但不能直接和 goose 本体对话。
@@ -118,6 +118,6 @@ MCP-UI 是更早期的一套交互式 UI 规范，主要把内容嵌入聊天窗
 
 如果你想为自己的扩展加入交互能力，可以参考：
 
-- [构建 MCP Apps](/docs/tutorials/building-mcp-apps) - 推荐的分步教程
+- [构建 MCP Apps](/zh-CN/docs/tutorials/building-mcp-apps) - 推荐的分步教程
 - [MCP Apps SDK and Specification](https://modelcontextprotocol.github.io/ext-apps/api/)
 - [MCP Apps SDK Guide](https://mcpui.dev/guide/introduction)

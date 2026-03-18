@@ -6,7 +6,7 @@ sidebar_position: 2
 
 # 扩展设计
 
-这份文档介绍 goose 中[扩展框架](/docs/getting-started/using-extensions)的设计与实现方式。扩展框架让 AI agent 能通过统一的工具接口与不同扩展交互。
+这份文档介绍 goose 中[扩展框架](/zh-CN/docs/getting-started/using-extensions)的设计与实现方式。扩展框架让 AI agent 能通过统一的工具接口与不同扩展交互。
 
 ## 核心概念
 

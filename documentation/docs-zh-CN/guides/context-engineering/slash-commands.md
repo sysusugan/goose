@@ -9,7 +9,7 @@ import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import { PanelLeft, Terminal } from 'lucide-react';
 
-自定义 slash command 是一种个性化快捷指令，用来快速运行 [recipes](/docs/guides/recipes)。如果你有一个会生成日报的 recipe，就可以创建一个自定义 slash command，在会话里直接调用它：
+自定义 slash command 是一种个性化快捷指令，用来快速运行 [recipes](/zh-CN/docs/guides/recipes)。如果你有一个会生成日报的 recipe，就可以创建一个自定义 slash command，在会话里直接调用它：
 
 ```
 /daily-report
@@ -32,7 +32,7 @@ import { PanelLeft, Terminal } from 'lucide-react';
   </TabItem>
   <TabItem value="cli" label="goose CLI">
 
-  在你的[配置文件](/docs/guides/config-files)中配置 slash command。把命令名（不带前导 `/`）和 recipe 文件在本机上的路径一起写进去：
+  在你的[配置文件](/zh-CN/docs/guides/config-files)中配置 slash command。把命令名（不带前导 `/`）和 recipe 文件在本机上的路径一起写进去：
 
 ```yaml title="~/.config/goose/config.yaml"
 slash_commands:
@@ -81,10 +81,10 @@ Context: ●○○○○○○○○○ 5% (9695/200000 tokens)
 
 ## 限制
 
-- Slash command 只能接收一个 [parameter](/docs/guides/recipes/recipe-reference#parameters)。如果 recipe 里定义了更多参数，其余参数必须有默认值。
+- Slash command 只能接收一个 [parameter](/zh-CN/docs/guides/recipes/recipe-reference#parameters)。如果 recipe 里定义了更多参数，其余参数必须有默认值。
 - 命令名不区分大小写（`/Bug` 和 `/bug` 会被当作同一个命令）。
 - 命令名必须唯一，且不能包含空格。
-- 不能使用与[内置 CLI slash commands](/docs/guides/goose-cli-commands#slash-commands) 冲突的名称，例如 `/recipe`、`/compact` 或 `/help`。
+- 不能使用与[内置 CLI slash commands](/zh-CN/docs/guides/goose-cli-commands#slash-commands) 冲突的名称，例如 `/recipe`、`/compact` 或 `/help`。
 - 如果 recipe 文件不存在或格式无效，这个命令会被当作普通文本发送给模型。
 
 ## 更多资源

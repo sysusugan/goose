@@ -6,7 +6,7 @@ sidebar_position: 111
 
 # 代码库分析
 
-[Developer 扩展](/docs/mcp/developer-mcp) 内置了一个 `analyze` 工具，可以帮助你理解代码结构、追踪符号使用情况，并查看跨文件调用图。只要启用了 Developer 扩展，这个工具就会自动可用，并支持[多种编程语言](https://github.com/block/goose/blob/main/crates/goose-mcp/src/developer/analyze/languages/mod.rs)。
+[Developer 扩展](/zh-CN/docs/mcp/developer-mcp) 内置了一个 `analyze` 工具，可以帮助你理解代码结构、追踪符号使用情况，并查看跨文件调用图。只要启用了 Developer 扩展，这个工具就会自动可用，并支持[多种编程语言](https://github.com/block/goose/blob/main/crates/goose-mcp/src/developer/analyze/languages/mod.rs)。
 
 <details>
 <summary>示例分析：跨文件追踪某个函数</summary>
@@ -115,10 +115,10 @@ analyze path="." focus="UserClass" follow_depth=3
 - **使用 `force=true`**：强制返回完整结果，但会显著占用对话上下文
 - **缩小分析范围**：只分析某个子目录或单个文件
 - **降低深度**：目录分析时使用 `max_depth=1` 或 `max_depth=2`
-- **交给 [subagent](/docs/guides/subagents)**：例如“Use a subagent to analyze the entire src/ directory and summarize the main components”，这样可以避免主对话被大段分析结果填满
+- **交给 [subagent](/zh-CN/docs/guides/subagents)**：例如“Use a subagent to analyze the entire src/ directory and summarize the main components”，这样可以避免主对话被大段分析结果填满
 
 ### 性能建议
 
 - 先从小范围开始，例如单个文件或局部子目录，再逐步扩展到整个项目
 - 对目录分析优先使用 `max_depth=1` 或 `max_depth=2`
-- 使用 [`.gooseignore`](/docs/guides/using-gooseignore) 和 `.gitignore` 排除无关目录，例如 `node_modules/`、构建产物或敏感文件
+- 使用 [`.gooseignore`](/zh-CN/docs/guides/using-gooseignore) 和 `.gitignore` 排除无关目录，例如 `node_modules/`、构建产物或敏感文件

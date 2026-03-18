@@ -25,32 +25,9 @@ const LANGUAGE_OPTIONS: LanguageOption[] = [
   },
 ];
 
-const EN_TO_ZH_EXACT: Record<string, string> = {
-  "/docs": "/zh-CN/docs",
-  "/docs/category/getting-started": "/zh-CN/docs/category/getting-started",
-  "/docs/category/guides": "/zh-CN/docs/category/guides",
-  "/docs/category/tutorials": "/zh-CN/docs/category/tutorials",
-  "/docs/category/mcp-servers": "/zh-CN/docs/category/mcp-servers",
-  "/docs/category/architecture-overview": "/zh-CN/docs/category/architecture-overview",
-  "/docs/category/experimental": "/zh-CN/docs/category/experimental",
-  "/docs/category/troubleshooting": "/zh-CN/docs/category/troubleshooting",
-};
-
-const ZH_TO_EN_EXACT: Record<string, string> = {
-  "/zh-CN/docs": "/docs",
-  "/zh-CN/docs/category/getting-started": "/docs/category/getting-started",
-  "/zh-CN/docs/category/guides": "/docs/category/guides",
-  "/zh-CN/docs/category/tutorials": "/docs/category/tutorials",
-  "/zh-CN/docs/category/mcp-servers": "/docs/category/mcp-servers",
-  "/zh-CN/docs/category/architecture-overview": "/docs/category/architecture-overview",
-  "/zh-CN/docs/category/experimental": "/docs/category/experimental",
-  "/zh-CN/docs/category/troubleshooting": "/docs/troubleshooting",
-  "/zh-CN/docs/category/开始": "/docs/category/getting-started",
-  "/zh-CN/docs/category/指南": "/docs/category/guides",
-  "/zh-CN/docs/category/教程": "/docs/category/tutorials",
-  "/zh-CN/docs/category/架构概览": "/docs/category/architecture-overview",
-  "/zh-CN/docs/experimental": "/docs/category/experimental",
-  "/zh-CN/docs/troubleshooting": "/docs/troubleshooting",
+const DOCS_HOME: Record<LanguageKey, string> = {
+  en: "/docs/quickstart",
+  "zh-CN": "/zh-CN/docs/quickstart",
 };
 
 function normalizePath(path: string): string {
@@ -94,34 +71,10 @@ function isDocsPath(relativePath: string): boolean {
 }
 
 function getTargetDocsPath(
-  relativePath: string,
+  _relativePath: string,
   targetLanguage: LanguageKey,
 ): string {
-  const normalizedPath = normalizePath(relativePath);
-
-  if (targetLanguage === "zh-CN") {
-    if (EN_TO_ZH_EXACT[normalizedPath]) {
-      return EN_TO_ZH_EXACT[normalizedPath];
-    }
-    if (normalizedPath.startsWith("/docs/")) {
-      return normalizedPath.replace(/^\/docs/, "/zh-CN/docs");
-    }
-    if (normalizedPath.startsWith("/zh-CN/docs")) {
-      return normalizedPath;
-    }
-    return "/zh-CN/docs/quickstart";
-  }
-
-  if (ZH_TO_EN_EXACT[normalizedPath]) {
-    return ZH_TO_EN_EXACT[normalizedPath];
-  }
-  if (normalizedPath.startsWith("/zh-CN/docs/")) {
-    return normalizedPath.replace(/^\/zh-CN\/docs/, "/docs");
-  }
-  if (normalizedPath.startsWith("/docs")) {
-    return normalizedPath;
-  }
-  return "/docs/quickstart";
+  return DOCS_HOME[targetLanguage];
 }
 
 export default function DocsLanguageDropdownNavbarItem({
@@ -148,7 +101,7 @@ export default function DocsLanguageDropdownNavbarItem({
   const items = useMemo(() => {
     return LANGUAGE_OPTIONS.map((option) => {
       const basePath = getTargetDocsPath(relativePath, option.key);
-      const to = `${basePath}${location.search}${location.hash}`;
+      const to = basePath;
       const isCurrent = option.key === currentLanguage;
 
       return {
@@ -159,7 +112,7 @@ export default function DocsLanguageDropdownNavbarItem({
         desktopLabel: `${option.flag} ${option.menuLabel ?? option.label}${isCurrent ? " ✓" : ""}`,
       };
     });
-  }, [currentLanguage, location.hash, location.search, relativePath]);
+  }, [currentLanguage, relativePath]);
 
   useEffect(() => {
     if (!isOpen) {

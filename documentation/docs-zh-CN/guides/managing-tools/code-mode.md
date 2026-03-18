@@ -11,7 +11,7 @@ import TabItem from '@theme/TabItem';
 Code Mode 是一种以编程方式与 MCP 工具交互的方法，而不是直接逐个调用工具。当你启用了很多扩展时，Code Mode 尤其有用，因为它能更高效地管理上下文窗口的使用。
 
 :::info
-这项功能需要启用内置的 [Code Mode 扩展](/docs/mcp/code-mode-mcp)。
+这项功能需要启用内置的 [Code Mode 扩展](/zh-CN/docs/mcp/code-mode-mcp)。
 :::
 
 Code Mode 主要控制两件事：
@@ -25,7 +25,7 @@ Code Mode 主要控制两件事：
 
 ## Code Mode 的工作方式
 
-[Code Mode 扩展](/docs/mcp/code-mode-mcp) 本身是一个 MCP server，它通过 MCP 协议暴露 3 个基础的 meta-tool。启用 Code Mode 后，goose 会切换到这种模式。在每次请求中，LLM 都会编写一段 JavaScript，然后由 goose 使用基于 Deno 的自定义运行时 [pctx (Port of Context)](https://github.com/AdrianCole/pctx) 来执行。这个过程会：
+[Code Mode 扩展](/zh-CN/docs/mcp/code-mode-mcp) 本身是一个 MCP server，它通过 MCP 协议暴露 3 个基础的 meta-tool。启用 Code Mode 后，goose 会切换到这种模式。在每次请求中，LLM 都会编写一段 JavaScript，然后由 goose 使用基于 Deno 的自定义运行时 [pctx (Port of Context)](https://github.com/AdrianCole/pctx) 来执行。这个过程会：
 
 - 在需要时发现你当前已启用扩展中的工具
 - 了解当前任务真正需要用到哪些工具

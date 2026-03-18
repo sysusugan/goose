@@ -158,7 +158,7 @@ function prompt {
 ```
 ## goose 命令的 Shell Completion
 
-`@goose` 会根据你的命令历史提供上下文感知辅助。如果你还想给 goose CLI 命令（例如 `goose session`、`goose run` 等）启用 tab completion，请参考 [shell completion 文档](/docs/guides/goose-cli-commands#completion)。
+`@goose` 会根据你的命令历史提供上下文感知辅助。如果你还想给 goose CLI 命令（例如 `goose session`、`goose run` 等）启用 tab completion，请参考 [shell completion 文档](/zh-CN/docs/guides/goose-cli-commands#completion)。
 
 ## 故障排查
 

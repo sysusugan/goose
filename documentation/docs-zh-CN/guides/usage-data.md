@@ -26,7 +26,7 @@ import { PanelLeft } from 'lucide-react';
 收集的使用数据**不包括**你的对话内容、代码、工具参数、错误消息或任何个人数据。
 
 :::info Provider Data Handling
-你在 goose 中使用的 [LLM providers](/docs/getting-started/providers)，可能会接收你的对话、提示词以及 goose 访问到的信息；这些数据是否保留、如何处理，取决于对应 provider 的隐私和数据保留政策。
+你在 goose 中使用的 [LLM providers](/zh-CN/docs/getting-started/providers)，可能会接收你的对话、提示词以及 goose 访问到的信息；这些数据是否保留、如何处理，取决于对应 provider 的隐私和数据保留政策。
 :::
 
 ## 修改你的偏好设置
@@ -66,4 +66,4 @@ import { PanelLeft } from 'lucide-react';
   </TabItem>
 </Tabs>
 
-你也可以直接在 [`config.yaml` 文件](/docs/guides/config-files) 中设置 `GOOSE_TELEMETRY_ENABLED`，或者把它作为[环境变量](/docs/guides/environment-variables#security-and-privacy)使用，仅对当前会话生效。
+你也可以直接在 [`config.yaml` 文件](/zh-CN/docs/guides/config-files) 中设置 `GOOSE_TELEMETRY_ENABLED`，或者把它作为[环境变量](/zh-CN/docs/guides/environment-variables#security-and-privacy)使用，仅对当前会话生效。

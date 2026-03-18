@@ -22,10 +22,10 @@ goose 内部有一个叫做 MOIM（Model-Observed Internal Memory）的组件，
 
 | Variable | Purpose | Default |
 |----------|---------|---------|
-| [`GOOSE_MOIM_MESSAGE_TEXT`](/docs/guides/environment-variables#session-management) | 每轮直接注入工作记忆的文本 | Not set |
-| [`GOOSE_MOIM_MESSAGE_FILE`](/docs/guides/environment-variables#session-management) | 每轮读取并注入的文件路径，支持 `~/` | Not set |
+| [`GOOSE_MOIM_MESSAGE_TEXT`](/zh-CN/docs/guides/environment-variables#session-management) | 每轮直接注入工作记忆的文本 | Not set |
+| [`GOOSE_MOIM_MESSAGE_FILE`](/zh-CN/docs/guides/environment-variables#session-management) | 每轮读取并注入的文件路径，支持 `~/` | Not set |
 
-如果这两个变量都设置了，内容会被拼接在一起。扩展会在每一轮都重新读取这些[环境变量](/docs/guides/environment-variables#session-management)，所以你可以在不中断会话的情况下更新它们。
+如果这两个变量都设置了，内容会被拼接在一起。扩展会在每一轮都重新读取这些[环境变量](/zh-CN/docs/guides/environment-variables#session-management)，所以你可以在不中断会话的情况下更新它们。
 
 :::info 大小限制
 内容上限为 64 KB，并采用 UTF-8 安全截断。建议保持内容简洁，既避免触发上限，也减少每轮 token 开销。

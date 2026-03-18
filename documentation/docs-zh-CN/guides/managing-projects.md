@@ -39,7 +39,7 @@ goose projects
 恢复项目时，你既可以继续之前的会话，也可以在该目录下开启一个全新的会话。
 :::
 
-完整命令语法和选项请参考 [CLI Commands Guide](/docs/guides/goose-cli-commands#project)。
+完整命令语法和选项请参考 [CLI Commands Guide](/zh-CN/docs/guides/goose-cli-commands#project)。
 
 ## 工作流示例
 

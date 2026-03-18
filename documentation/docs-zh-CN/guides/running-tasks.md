@@ -12,7 +12,7 @@ sidebar_position: 75
 
 `goose run` 会启动一个新会话，执行你传入的参数，并在任务完成后自动退出会话。
 
-运行任务有很多方式，完整选项请查看 [CLI 命令指南](/docs/guides/goose-cli-commands#run-options)。
+运行任务有很多方式，完整选项请查看 [CLI 命令指南](/zh-CN/docs/guides/goose-cli-commands#run-options)。
 
 ### 在命令里直接写文本
 
