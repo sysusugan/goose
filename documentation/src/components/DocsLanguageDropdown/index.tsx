@@ -79,8 +79,10 @@ function getTargetDocsPath(
 
 export default function DocsLanguageDropdownNavbarItem({
   mobile = false,
+  onClick,
 }: {
   mobile?: boolean;
+  onClick?: () => void;
 }) {
   const {siteConfig} = useDocusaurusContext();
   const location = useLocation();
@@ -92,10 +94,7 @@ export default function DocsLanguageDropdownNavbarItem({
     [location.pathname, siteConfig.baseUrl],
   );
 
-  if (!isDocsPath(relativePath)) {
-    return null;
-  }
-
+  const docsPath = isDocsPath(relativePath);
   const currentLanguage = getCurrentLanguage(relativePath);
 
   const items = useMemo(() => {
@@ -115,7 +114,7 @@ export default function DocsLanguageDropdownNavbarItem({
   }, [currentLanguage, relativePath]);
 
   useEffect(() => {
-    if (!isOpen) {
+    if (!docsPath || !isOpen) {
       return undefined;
     }
 
@@ -144,12 +143,17 @@ export default function DocsLanguageDropdownNavbarItem({
       document.removeEventListener("touchstart", handleClickOutside);
       document.removeEventListener("keydown", handleEscape);
     };
-  }, [isOpen]);
+  }, [docsPath, isOpen]);
+
+  if (!docsPath) {
+    return null;
+  }
 
   if (mobile) {
     return (
       <DropdownNavbarItem
         mobile
+        onClick={onClick}
         label={`🌐 ${
           LANGUAGE_OPTIONS.find((option) => option.key === currentLanguage)
             ?.label ?? "Language"

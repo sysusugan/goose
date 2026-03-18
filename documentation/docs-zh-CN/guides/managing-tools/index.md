@@ -10,7 +10,7 @@ import styles from "@site/src/components/Card/styles.module.css";
 
 <h1 className={styles.pageTitle}>工具管理</h1>
 <p className={styles.pageDescription}>
-  工具是 <Link to="/docs/getting-started/using-extensions">扩展</Link> 内部的具体能力，它们共同赋予 goose 执行任务的能力。你可以学习如何控制这些工具，并按自己的方式进行配置。
+  工具是 <Link to="/zh-CN/docs/getting-started/using-extensions">扩展</Link> 内部的具体能力，它们共同赋予 goose 执行任务的能力。你可以学习如何控制这些工具，并按自己的方式进行配置。
 </p>
 
 <div className={styles.categorySection}>
@@ -34,7 +34,7 @@ import styles from "@site/src/components/Card/styles.module.css";
     <Card
       title="Ollama Tool Shim"
       description="通过实验性的本地解释器模型方案，为原生不支持工具调用的模型启用 tool calling。"
-      link="/docs/experimental/ollama"
+      link="/zh-CN/docs/experimental/ollama"
     />
   </div>
 </div>

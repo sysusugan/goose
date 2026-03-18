@@ -13,6 +13,16 @@ const path = require('path');
 const buildDir = path.join(__dirname, '..', 'build');
 const port = process.env.PORT || 3001;
 
+function decodePathname(url) {
+  const encodedPathname = (url.substring(6) || '/').split('?')[0];
+
+  try {
+    return decodeURIComponent(encodedPathname);
+  } catch {
+    return null;
+  }
+}
+
 const serve = serveStatic(buildDir, {
   index: ['index.html'],
   setHeaders: (res, filePath) => {
@@ -26,15 +36,22 @@ const serve = serveStatic(buildDir, {
 const server = http.createServer((req, res) => {
   // Handle requests to /goose/ by serving from the build directory
   if (req.url.startsWith('/goose/')) {
-    const originalUrl = req.url;
     const strippedUrl = req.url.substring(6) || '/';
-    const pathname = decodeURIComponent(strippedUrl.split('?')[0]);
+    const pathname = decodePathname(req.url);
+
+    if (pathname === null) {
+      res.statusCode = 400;
+      res.end('Bad request');
+      return;
+    }
+
     let servedUrl = strippedUrl;
 
     // Serve directory index files directly so local preview works with or without
     // a trailing slash and does not depend on browser redirect caching.
     if (!path.extname(pathname) && !pathname.endsWith('/')) {
-      const candidateDir = path.join(buildDir, pathname);
+      const relativePathname = pathname.replace(/^\/+/, '');
+      const candidateDir = path.join(buildDir, relativePathname);
       if (fs.existsSync(candidateDir) && fs.statSync(candidateDir).isDirectory()) {
         servedUrl = `${pathname}/index.html`;
       } else {
