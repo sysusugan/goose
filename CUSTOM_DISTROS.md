@@ -1,5 +1,7 @@
 # Custom Distributions of goose
 
+[English](./CUSTOM_DISTROS.md) | [简体中文](./CUSTOM_DISTROS.zh-CN.md)
+
 > **Tip:** This is sometimes referred to as "white labelling" — creating a branded or tailored version of an open source project for your organization.
 
 This guide explains how to create custom distributions of goose tailored to your organization's needs—whether that's preconfigured models, custom tools, branded interfaces, or entirely new user experiences.
