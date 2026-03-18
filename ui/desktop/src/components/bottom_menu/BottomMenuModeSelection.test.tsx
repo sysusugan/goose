@@ -1,14 +1,21 @@
 import { describe, it, expect, vi, beforeEach } from 'vitest';
 import { render, screen, waitFor, fireEvent } from '@testing-library/react';
+import type { ReactElement } from 'react';
 import { BottomMenuModeSelection } from './BottomMenuModeSelection';
+import { LocalizationProvider } from '../../contexts/LocalizationContext';
 
 let mockConfig: Record<string, unknown> = {};
 const mockUpdateSession = vi.fn().mockResolvedValue({});
 const mockGetSession = vi.fn().mockResolvedValue({ data: null });
+const mockUpsert = vi.fn().mockResolvedValue(undefined);
+
+const renderWithProviders = (ui: ReactElement) =>
+  render(<LocalizationProvider>{ui}</LocalizationProvider>);
 
 vi.mock('../ConfigContext', () => ({
   useConfig: () => ({
     config: mockConfig,
+    upsert: (...args: unknown[]) => mockUpsert(...args),
   }),
 }));
 
@@ -33,11 +40,16 @@ describe('BottomMenuModeSelection', () => {
   beforeEach(() => {
     vi.clearAllMocks();
     mockConfig = {};
+    window.electron.getSetting = vi.fn().mockResolvedValue('en');
+    window.electron.setSetting = vi.fn().mockResolvedValue(undefined);
+    window.electron.broadcastLanguageChange = vi.fn();
+    window.electron.on = vi.fn();
+    window.electron.off = vi.fn();
   });
 
   it('displays mode from config when no session', async () => {
     mockConfig.GOOSE_MODE = 'approve';
-    render(<BottomMenuModeSelection sessionId={null} />);
+    renderWithProviders(<BottomMenuModeSelection sessionId={null} />);
     await waitFor(() => {
       expect(screen.getByText('manual')).toBeInTheDocument();
     });
@@ -45,7 +57,7 @@ describe('BottomMenuModeSelection', () => {
 
   it('defaults to auto when config has no mode', async () => {
     mockConfig.GOOSE_MODE = undefined;
-    render(<BottomMenuModeSelection sessionId={null} />);
+    renderWithProviders(<BottomMenuModeSelection sessionId={null} />);
     await waitFor(() => {
       expect(screen.getByText('autonomous')).toBeInTheDocument();
     });
@@ -54,7 +66,7 @@ describe('BottomMenuModeSelection', () => {
   it('fetches mode from session when sessionId is present', async () => {
     mockConfig.GOOSE_MODE = 'auto';
     mockGetSession.mockResolvedValue({ data: { goose_mode: 'approve' } });
-    render(<BottomMenuModeSelection sessionId="test-session-123" />);
+    renderWithProviders(<BottomMenuModeSelection sessionId="test-session-123" />);
     await waitFor(() => {
       expect(screen.getByText('manual')).toBeInTheDocument();
     });
@@ -65,7 +77,7 @@ describe('BottomMenuModeSelection', () => {
 
   it('calls updateSession and does not write global config', async () => {
     mockConfig.GOOSE_MODE = 'auto';
-    render(<BottomMenuModeSelection sessionId="test-session-123" />);
+    renderWithProviders(<BottomMenuModeSelection sessionId="test-session-123" />);
 
     fireEvent.click(screen.getByText('Manual'));
 
@@ -78,7 +90,7 @@ describe('BottomMenuModeSelection', () => {
 
   it('does not call updateSession when sessionId is null', async () => {
     mockConfig.GOOSE_MODE = 'auto';
-    render(<BottomMenuModeSelection sessionId={null} />);
+    renderWithProviders(<BottomMenuModeSelection sessionId={null} />);
 
     fireEvent.click(screen.getByText('Manual'));
 
@@ -98,8 +110,12 @@ describe('BottomMenuModeSelection', () => {
       .mockImplementationOnce(() => promiseA)
       .mockResolvedValueOnce({ data: { goose_mode: 'auto' } });
 
-    const { rerender } = render(<BottomMenuModeSelection sessionId="session-A" />);
-    rerender(<BottomMenuModeSelection sessionId="session-B" />);
+    const { rerender } = renderWithProviders(<BottomMenuModeSelection sessionId="session-A" />);
+    rerender(
+      <LocalizationProvider>
+        <BottomMenuModeSelection sessionId="session-B" />
+      </LocalizationProvider>
+    );
 
     await waitFor(() => {
       expect(screen.getByText('autonomous')).toBeInTheDocument();

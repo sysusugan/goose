@@ -256,7 +256,6 @@ export const HuggingFaceModelSearch = ({ onDownloadStarted }: Props) => {
                       <span className="text-xs text-text-muted">
                         {formatDownloads(model.downloads)} downloads
                       </span>
-                      <span className="text-xs text-text-muted">★ {model.likes}</span>
                     </div>
                   </div>
                   {loadingFiles.has(model.repo_id) ? (
@@ -287,7 +286,7 @@ export const HuggingFaceModelSearch = ({ onDownloadStarted }: Props) => {
                                 </span>
                                 {isRecommended && (
                                   <span className="inline-flex items-center gap-1 text-[10px] px-1.5 py-0.5 rounded-full bg-yellow-500/15 text-yellow-500">
-                                    <Star className="w-3 h-3" /> {t('localInference.search.recommended')}
+                                    <Star className="w-3 h-3" /> {t('localInference.recommended')}
                                   </span>
                                 )}
                               </div>
@@ -319,13 +318,15 @@ export const HuggingFaceModelSearch = ({ onDownloadStarted }: Props) => {
       )}
 
       <div className="space-y-2 pt-2 border-t border-border-subtle">
-        <label className="text-xs font-medium text-text-muted">{t('localInference.search.directDownloadLabel')}</label>
+        <label className="text-xs font-medium text-text-muted">
+          {t('localInference.search.directDownload')}
+        </label>
         <div className="flex gap-2">
           <input
             type="text"
             value={directSpec}
             onChange={(e) => setDirectSpec(e.target.value)}
-            placeholder={t('localInference.search.directDownloadPlaceholder')}
+            placeholder={t('localInference.search.directPlaceholder')}
             className="flex-1 px-3 py-2 text-sm border border-border-subtle rounded-lg bg-background-default text-text-default placeholder:text-text-muted focus:outline-none focus:border-accent-primary"
           />
           <Button
@@ -339,7 +340,7 @@ export const HuggingFaceModelSearch = ({ onDownloadStarted }: Props) => {
             )}
           </Button>
         </div>
-        <p className="text-xs text-text-muted">{t('localInference.search.directDownloadHelp')}</p>
+        <p className="text-xs text-text-muted">{t('localInference.search.directDescription')}</p>
       </div>
     </div>
   );

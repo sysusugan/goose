@@ -8,7 +8,7 @@ import ToolCallWithResponse from '../ToolCallWithResponse';
 import ImagePreview from '../ImagePreview';
 import {
   getTextAndImageContent,
-  getReasoningContent,
+  getThinkingContent,
   ToolRequestMessageContent,
   ToolResponseMessageContent,
 } from '../../types/message';
@@ -86,7 +86,7 @@ export const SessionMessages: React.FC<SessionMessagesProps> = ({
               messages
                 .map((message, index) => {
                   const { textContent, imagePaths } = getTextAndImageContent(message);
-                  const reasoningContent = getReasoningContent(message);
+                  const reasoningContent = getThinkingContent(message);
 
                   // Get tool requests from the message
                   const toolRequests = message.content
