@@ -3,7 +3,7 @@
   "position": 6,
   "link": {
     "type": "generated-index",
-    "slug": "/category/架构概览",
+    "slug": "/category/architecture-overview",
     "description": "了解 goose 的核心组件、扩展设计和错误处理方式。"
   }
 }

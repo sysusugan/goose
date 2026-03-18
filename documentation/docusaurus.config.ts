@@ -223,6 +223,22 @@ const config: Config = {
             from: '/docs/guides/using-goosehints',
             to: '/docs/guides/context-engineering/using-goosehints',
           },
+          {
+            from: '/zh-CN/docs/category/开始',
+            to: '/zh-CN/docs/category/getting-started',
+          },
+          {
+            from: '/zh-CN/docs/category/指南',
+            to: '/zh-CN/docs/category/guides',
+          },
+          {
+            from: '/zh-CN/docs/category/教程',
+            to: '/zh-CN/docs/category/tutorials',
+          },
+          {
+            from: '/zh-CN/docs/category/架构概览',
+            to: '/zh-CN/docs/category/architecture-overview',
+          },
           // MCP tutorial redirects - moved from /docs/tutorials/ to /docs/mcp/
           {
             from: '/docs/tutorials/agentql-mcp',
