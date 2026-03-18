@@ -44,6 +44,10 @@ jobs:
           INKEEP_API_KEY: ${{ secrets.INKEEP_API_KEY }}
           INKEEP_INTEGRATION_ID: ${{ secrets.INKEEP_INTEGRATION_ID }}
           INKEEP_ORG_ID: ${{ secrets.INKEEP_ORG_ID }}
+          TARGET_URL: ${{ vars.DOCS_SITE_URL }}
+          TARGET_PATH: ${{ vars.DOCS_BASE_PATH }}
+          ORGANIZATION_NAME: ${{ vars.DOCS_ORGANIZATION_NAME }}
+          PROJECT_NAME: ${{ vars.DOCS_PROJECT_NAME }}
         run: |
           npm install
           npm test

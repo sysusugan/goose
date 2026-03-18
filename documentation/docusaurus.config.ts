@@ -10,6 +10,30 @@ require("dotenv").config();
 const inkeepApiKey = process.env.INKEEP_API_KEY;
 const inkeepIntegrationId = process.env.INKEEP_INTEGRATION_ID;
 const inkeepOrgId = process.env.INKEEP_ORG_ID;
+const [githubRepoOwner, githubRepoName] = (
+  process.env.GITHUB_REPOSITORY ?? ""
+).split("/", 2);
+
+const organizationName =
+  process.env.ORGANIZATION_NAME || githubRepoOwner || "block";
+const projectName = process.env.PROJECT_NAME || githubRepoName || "goose";
+const siteUrl = (process.env.TARGET_URL ||
+  `https://${organizationName}.github.io`).replace(/\/$/, "");
+
+const normalizeBaseUrl = (value: string) => {
+  if (!value || value === "/") {
+    return "/";
+  }
+
+  const withLeadingSlash = value.startsWith("/") ? value : `/${value}`;
+  return withLeadingSlash.endsWith("/")
+    ? withLeadingSlash
+    : `${withLeadingSlash}/`;
+};
+
+const defaultBaseUrl =
+  projectName === `${organizationName}.github.io` ? "/" : `/${projectName}/`;
+const baseUrl = normalizeBaseUrl(process.env.TARGET_PATH || defaultBaseUrl);
 
 const config: Config = {
   title: "goose",
@@ -18,15 +42,15 @@ const config: Config = {
   favicon: "img/favicon.ico",
 
   // Set the production url of your site here
-  url: "https://block.github.io/",
+  url: siteUrl,
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
-  baseUrl: process.env.TARGET_PATH || "/goose/",
+  baseUrl,
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  organizationName: "block", // Usually your GitHub org/user name.
-  projectName: "goose", // Usually your repo name.
+  organizationName, // Usually your GitHub org/user name.
+  projectName, // Usually your repo name.
 
   onBrokenLinks: "throw",
   
@@ -52,7 +76,7 @@ const config: Config = {
         rel: "alternate",
         type: "text/plain",
         title: "LLM context",
-        href: "/goose/llms.txt",
+        href: `${baseUrl}llms.txt`,
       },
     },
   ],
