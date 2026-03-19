@@ -1,0 +1,443 @@
+<!doctype html>
+<html lang="en" dir="ltr" class="docs-wrapper plugin-docs plugin-id-zh-CN docs-version-current docs-doc-page docs-doc-id-troubleshooting/known-issues" data-has-hydrated="false">
+<head>
+<meta charset="UTF-8">
+<meta name="generator" content="Docusaurus v3.9.2">
+<title data-rh="true">Known Issues | goose</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://sysusugan.github.io/goose/img/home-banner.png"><meta data-rh="true" name="twitter:image" content="https://sysusugan.github.io/goose/img/home-banner.png"><meta data-rh="true" property="og:url" content="https://sysusugan.github.io/goose/zh-CN/docs/troubleshooting/known-issues"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-zh-CN-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-zh-CN-current"><meta data-rh="true" property="og:title" content="Known Issues | goose"><meta data-rh="true" name="description" content="goose 常见问题的系统化排查指南，包含逐步解决方案。"><meta data-rh="true" property="og:description" content="goose 常见问题的系统化排查指南，包含逐步解决方案。"><link data-rh="true" rel="icon" href="/goose/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://sysusugan.github.io/goose/zh-CN/docs/troubleshooting/known-issues"><link data-rh="true" rel="alternate" href="https://sysusugan.github.io/goose/zh-CN/docs/troubleshooting/known-issues" hreflang="en"><link data-rh="true" rel="alternate" href="https://sysusugan.github.io/goose/zh-CN/docs/troubleshooting/known-issues" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"故障排查","item":"https://sysusugan.github.io/goose/zh-CN/docs/troubleshooting/"},{"@type":"ListItem","position":2,"name":"Known Issues","item":"https://sysusugan.github.io/goose/zh-CN/docs/troubleshooting/known-issues"}]}</script><link rel="alternate" type="application/rss+xml" href="/goose/blog/rss.xml" title="goose RSS Feed">
+<link rel="alternate" type="application/atom+xml" href="/goose/blog/atom.xml" title="goose Atom Feed">
+
+<link rel="preconnect" href="https://www.google-analytics.com">
+<link rel="preconnect" href="https://www.googletagmanager.com">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZS5D6SB4ZJ"></script>
+<script>function gtag(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],gtag("js",new Date),gtag("config","G-ZS5D6SB4ZJ",{anonymize_ip:!0})</script>
+
+
+
+
+
+
+
+
+
+
+<link rel="alternate" type="text/plain" title="LLM context" href="/goose/llms.txt"><link rel="stylesheet" href="/goose/assets/css/styles.77bf8615.css">
+<script src="/goose/assets/js/runtime~main.c5dd0944.js" defer="defer"></script>
+<script src="/goose/assets/js/main.300c923f.js" defer="defer"></script>
+</head>
+<body class="navigation-with-keyboard">
+<svg style="display: none;"><defs>
+<symbol id="theme-svg-external-link" viewBox="0 0 24 24"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></symbol>
+</defs></svg>
+<script>!function(){var t=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme")}catch(t){}}();document.documentElement.setAttribute("data-theme",t||(window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light")),document.documentElement.setAttribute("data-theme-choice",t||"system")}(),function(){try{const c=new URLSearchParams(window.location.search).entries();for(var[t,e]of c)if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id="__docusaurus"><link rel="preload" as="image" href="/goose/img/logo_light.png"><link rel="preload" as="image" href="/goose/img/logo_dark.png"><div role="region" aria-label="Skip to main content"><a class="skipToContent_fXgn" href="#__docusaurus_skipToContent_fallback">Skip to main content</a></div><nav aria-label="Main" class="theme-layout-navbar navbar navbar--fixed-top"><div class="navbar__inner"><div class="theme-layout-navbar-left navbar__items"><button aria-label="Toggle navigation bar" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="navbar__brand" href="/goose/"><div class="navbar__logo"><img src="/goose/img/logo_light.png" alt="Block Logo" class="themedComponent_mlkZ themedComponent--light_NVdE"><img src="/goose/img/logo_dark.png" alt="Block Logo" class="themedComponent_mlkZ themedComponent--dark_xIcU"></div><b class="navbar__title text--truncate"></b></a><a class="navbar__item navbar__link" href="/goose/docs/quickstart">Quickstart</a><a class="navbar__item navbar__link" href="/goose/docs/category/guides">Docs</a><a class="navbar__item navbar__link" href="/goose/docs/category/tutorials">Tutorials</a><a class="navbar__item navbar__link" href="/goose/docs/category/mcp-servers">MCPs</a><a class="navbar__item navbar__link" href="/goose/blog">Blog</a><div class="navbar__item dropdown dropdown--hoverable"><a href="#" aria-haspopup="true" aria-expanded="false" role="button" class="navbar__link">Resources</a><ul class="dropdown__menu"><li><a class="dropdown__link" href="/goose/extensions">Extensions</a></li><li><a class="dropdown__link" href="/goose/skills">Skills Marketplace</a></li><li><a class="dropdown__link" href="/goose/recipe-generator">Recipe Generator</a></li><li><a class="dropdown__link" href="/goose/prompt-library">Prompt Library</a></li><li><a class="dropdown__link" href="/goose/recipes">Recipe Cookbook</a></li><li><a class="dropdown__link" href="/goose/deeplink-generator">Deeplink Generator</a></li></ul></div></div><div class="theme-layout-navbar-right navbar__items navbar__items--right"><a href="https://discord.gg/goose-oss" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link">Discord<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a><a href="https://github.com/block/goose" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link">GitHub<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a><div class="toggle_vylO colorModeToggle_x44X"><button class="clean-btn toggleButton_gllP toggleButtonDisabled_aARS" type="button" disabled="" title="system mode" aria-label="Switch between dark and light mode (currently system mode)"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP lightToggleIcon_pyhR"><path fill="currentColor" d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP darkToggleIcon_wfgR"><path fill="currentColor" d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP systemToggleIcon_QzmC"><path fill="currentColor" d="m12 21c4.971 0 9-4.029 9-9s-4.029-9-9-9-9 4.029-9 9 4.029 9 9 9zm4.95-13.95c1.313 1.313 2.05 3.093 2.05 4.95s-0.738 3.637-2.05 4.95c-1.313 1.313-3.093 2.05-4.95 2.05v-14c1.857 0 3.637 0.737 4.95 2.05z"></path></svg></button></div><div class="navbarSearchContainer_Bca1"><div id="inkeep"></div></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div id="__docusaurus_skipToContent_fallback" class="theme-layout-main main-wrapper mainWrapper_z2l0"><div class="docsWrapper_hBAB"><button aria-label="Scroll back to top" class="clean-btn theme-back-to-top-button backToTopButton_sjWU" type="button"></button><div class="docRoot_UBD9"><aside class="theme-doc-sidebar-container docSidebarContainer_YfHR"><div class="sidebarViewport_aRkj"><div class="sidebar_njMd"><nav aria-label="Docs sidebar" class="menu thin-scrollbar menu_SIkG"><ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/goose/zh-CN/docs/quickstart"><span title="快速开始" class="linkLabel_WmDU">快速开始</span></a></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist" href="/goose/zh-CN/docs/category/getting-started"><span title="开始" class="categoryLinkLabel_W154">开始</span></a><button aria-label="Expand sidebar category &#x27;开始&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist" href="/goose/zh-CN/docs/category/guides"><span title="指南" class="categoryLinkLabel_W154">指南</span></a><button aria-label="Expand sidebar category &#x27;指南&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist" href="/goose/zh-CN/docs/category/tutorials"><span title="教程" class="categoryLinkLabel_W154">教程</span></a><button aria-label="Expand sidebar category &#x27;教程&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist" href="/goose/zh-CN/docs/category/mcp-servers"><span title="MCP Servers" class="categoryLinkLabel_W154">MCP Servers</span></a><button aria-label="Expand sidebar category &#x27;MCP Servers&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist" href="/goose/zh-CN/docs/category/architecture-overview"><span title="架构概览" class="categoryLinkLabel_W154">架构概览</span></a><button aria-label="Expand sidebar category &#x27;架构概览&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist" href="/goose/zh-CN/docs/experimental/"><span title="实验功能" class="categoryLinkLabel_W154">实验功能</span></a><button aria-label="Expand sidebar category &#x27;实验功能&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--active" href="/goose/zh-CN/docs/troubleshooting/"><span title="故障排查" class="categoryLinkLabel_W154">故障排查</span></a><button aria-label="Collapse sidebar category &#x27;故障排查&#x27;" aria-expanded="true" type="button" class="clean-btn menu__caret"></button></div><ul class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/goose/zh-CN/docs/troubleshooting/diagnostics-and-reporting"><span title="Diagnostics and Reporting" class="linkLabel_WmDU">Diagnostics and Reporting</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link menu__link--active" aria-current="page" tabindex="0" href="/goose/zh-CN/docs/troubleshooting/known-issues"><span title="Known Issues" class="linkLabel_WmDU">Known Issues</span></a></li></ul></li></ul></nav></div></div></aside><main class="docMainContainer_TBSr"><div class="container padding-top--md padding-bottom--lg"><div class="row"><div class="col col--9"><div class="docItemContainer_c0TR"><article><nav class="theme-doc-breadcrumbs breadcrumbsContainer_Z_bl" aria-label="Breadcrumbs"><ul class="breadcrumbs"><li class="breadcrumbs__item"><a aria-label="Home page" class="breadcrumbs__link" href="/goose/"><svg viewBox="0 0 24 24" class="breadcrumbHomeIcon_YNFT"><path d="M10 19v-5h4v5c0 .55.45 1 1 1h3c.55 0 1-.45 1-1v-7h1.7c.46 0 .68-.57.33-.87L12.67 3.6c-.38-.34-.96-.34-1.34 0l-8.36 7.53c-.34.3-.13.87.33.87H5v7c0 .55.45 1 1 1h3c.55 0 1-.45 1-1z" fill="currentColor"></path></svg></a></li><li class="breadcrumbs__item"><a class="breadcrumbs__link" href="/goose/zh-CN/docs/troubleshooting/"><span>故障排查</span></a></li><li class="breadcrumbs__item breadcrumbs__item--active"><span class="breadcrumbs__link">Known Issues</span></li></ul></nav><div class="tocCollapsible_ETCw theme-doc-toc-mobile tocMobile_ITEo"><button type="button" class="clean-btn tocCollapsibleButton_TO0P">On this page</button></div><div class="theme-doc-markdown markdown"><header class="flex justify-between items-start mb-4 flex-col md:flex-row gap-2 md:gap-0"><h1 class="m-0 flex-1">Known Issues</h1><div class="relative inline-flex"><div class="flex items-center bg-black dark:bg-white rounded-md"><div class="[&amp;&gt;button]:rounded-r-none"><button class="flex items-center gap-1.5 px-3 py-1.5 bg-black dark:bg-white text-white dark:text-black rounded-md text-sm font-medium transition-all duration-200 ease-in-out hover:opacity-90 hover:-translate-y-px focus:outline-none focus:ring-2 focus:ring-black dark:focus:ring-white focus:ring-offset-2 active:translate-y-px disabled:opacity-60 disabled:cursor-not-allowed disabled:hover:opacity-60 disabled:hover:translate-y-0" aria-label="Copy page to clipboard" type="button" disabled=""><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-copy flex-shrink-0" aria-hidden="true"><rect width="14" height="14" x="8" y="8" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg>Copy page</button></div><div class="w-px h-4 bg-gray-700 dark:bg-gray-300"></div><button class="px-2 py-1.5 bg-black dark:bg-white text-white dark:text-black rounded-l-none rounded-r-md text-sm font-medium transition-all duration-200 ease-in-out hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-black dark:focus:ring-white focus:ring-offset-2 flex items-center justify-center" aria-label="More page actions" aria-expanded="false" aria-haspopup="true"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-down transition-transform duration-200"><path d="m6 9 6 6 6-6"></path></svg></button></div></div></header><p>goose 和其他系统一样，偶尔也会遇到一些已知问题。这一页汇总了常见故障和对应的处理方式。</p>
+<div class="theme-admonition theme-admonition-tip admonition_xJq3 alert alert--success"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 12 16"><path fill-rule="evenodd" d="M6.5 0C3.48 0 1 2.19 1 5c0 .92.55 2.25 1 3 1.34 2.25 1.78 2.78 2 4v1h5v-1c.22-1.22.66-1.75 2-4 .45-.75 1-2.08 1-3 0-2.81-2.48-5-5.5-5zm3.64 7.48c-.25.44-.47.8-.67 1.11-.86 1.41-1.25 2.06-1.45 3.23-.02.05-.02.11-.02.17H5c0-.06 0-.13-.02-.17-.2-1.17-.59-1.83-1.45-3.23-.2-.31-.42-.67-.67-1.11C2.44 6.78 2 5.65 2 5c0-2.2 2.02-4 4.5-4 1.22 0 2.36.42 3.22 1.19C10.55 2.94 11 3.94 11 5c0 .66-.44 1.78-.86 2.48zM4 14h5c-.23 1.14-1.3 2-2.5 2s-2.27-.86-2.5-2z"></path></svg></span>没找到对应问题？</div><div class="admonitionContent_BuS1"><p>你可以到 <a href="https://discord.gg/goose-oss" target="_blank" rel="noopener noreferrer" class="">Discord 社区</a> 求助。为了更快获得帮助，建议先生成一份<a class="" href="/goose/zh-CN/docs/troubleshooting/diagnostics-and-reporting">诊断包</a>。</p></div></div>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="goose-会修改文件">goose 会修改文件<a href="#goose-会修改文件" class="hash-link" aria-label="Direct link to goose 会修改文件" title="Direct link to goose 会修改文件" translate="no">​</a></h3>
+<p>goose 会在完成任务的过程中主动编辑文件。为了避免覆盖你自己的改动，建议把你的个人改动先通过版本控制暂存或提交，把 goose 的改动单独保留到你完成 review 之后再处理。更稳妥的做法是把 goose 的修改拆成单独提交，便于回滚。</p>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="中断-goose">中断 goose<a href="#中断-goose" class="hash-link" aria-label="Direct link to 中断 goose" title="Direct link to 中断 goose" translate="no">​</a></h3>
+<p>如果 goose 的方向跑偏，或者卡在错误路径上，可以直接<a class="" href="/goose/zh-CN/docs/guides/sessions/in-session-actions#interrupt-task">中断当前任务</a>，然后补充新的说明或修正指令。</p>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="stuck-in-a-loop-or-unresponsive">卡在循环里或没有响应<a href="#stuck-in-a-loop-or-unresponsive" class="hash-link" aria-label="Direct link to 卡在循环里或没有响应" title="Direct link to 卡在循环里或没有响应" translate="no">​</a></h3>
+<p>在长会话中，goose 偶尔可能出现“死循环”或者长时间没有响应。通常最简单的解决办法是结束当前会话并重新开始。</p>
+<ol>
+<li class="">
+<p>按住 <code>Ctrl+C</code> 取消当前执行</p>
+</li>
+<li class="">
+<p>启动新会话：</p>
+<div class="language-sh codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-sh codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">goose session</span><br></span></code></pre></div></div>
+</li>
+</ol>
+<div class="theme-admonition theme-admonition-tip admonition_xJq3 alert alert--success"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 12 16"><path fill-rule="evenodd" d="M6.5 0C3.48 0 1 2.19 1 5c0 .92.55 2.25 1 3 1.34 2.25 1.78 2.78 2 4v1h5v-1c.22-1.22.66-1.75 2-4 .45-.75 1-2.08 1-3 0-2.81-2.48-5-5.5-5zm3.64 7.48c-.25.44-.47.8-.67 1.11-.86 1.41-1.25 2.06-1.45 3.23-.02.05-.02.11-.02.17H5c0-.06 0-.13-.02-.17-.2-1.17-.59-1.83-1.45-3.23-.2-.31-.42-.67-.67-1.11C2.44 6.78 2 5.65 2 5c0-2.2 2.02-4 4.5-4 1.22 0 2.36.42 3.22 1.19C10.55 2.94 11 3.94 11 5c0 .66-.44 1.78-.86 2.48zM4 14h5c-.23 1.14-1.3 2-2.5 2s-2.27-.86-2.5-2z"></path></svg></span>tip</div><div class="admonitionContent_BuS1"><p>如果任务很大或很复杂，拆成多个更小的会话通常更稳定。</p></div></div>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="避免长时间不退出的命令">避免长时间不退出的命令<a href="#避免长时间不退出的命令" class="hash-link" aria-label="Direct link to 避免长时间不退出的命令" title="Direct link to 避免长时间不退出的命令" translate="no">​</a></h3>
+<p>如果你在使用 goose CLI，并且项目里包含 Web 开发流程，像 <code>npm run dev</code>、<code>python -m http.server</code>、<code>webpack serve</code> 这类命令可能会一直运行，导致 goose 挂起等待。</p>
+<p>你可以通过自定义 shell 行为来处理这些命令。详细说明见<a class="" href="/goose/zh-CN/docs/guides/environment-variables">环境变量指南</a>。</p>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="上下文长度超限">上下文长度超限<a href="#上下文长度超限" class="hash-link" aria-label="Direct link to 上下文长度超限" title="Direct link to 上下文长度超限" translate="no">​</a></h3>
+<p>当发送给 goose 的输入超过当前 LLM 模型可接受的 token 上限时，会出现这类错误。处理方式通常是把输入拆成更小的部分，或者把长期背景信息放进 <a class="" href="/goose/zh-CN/docs/guides/context-engineering/using-goosehints"><code>.goosehints</code></a>。在 goose Desktop 中，也可以结合<a class="" href="/goose/zh-CN/docs/guides/sessions/in-session-actions#queue-messages">消息排队</a>逐步喂给模型。</p>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="使用-ollama-provider">使用 Ollama Provider<a href="#使用-ollama-provider" class="hash-link" aria-label="Direct link to 使用 Ollama Provider" title="Direct link to 使用 Ollama Provider" translate="no">​</a></h3>
+<p>Ollama 使用本地模型，所以在 goose 中接入前，需要先<a class="" href="/goose/zh-CN/docs/getting-started/providers">下载 Ollama 并启动一个本地模型</a>。如果模型还没拉取完成，常见报错如下：</p>
+<blockquote>
+<p>ExecutionError(&quot;error sending request for url (<a href="http://localhost:11434/v1/chat/completions" target="_blank" rel="noopener noreferrer" class="">http://localhost:11434/v1/chat/completions</a>)&quot;)</p>
+</blockquote>
+<p>另外需要注意，DeepSeek 系列模型通常不支持 tool calling，所以如果你通过 Ollama 使用这类模型，需要先关闭所有 goose 扩展，相关说明见<a class="" href="/goose/zh-CN/docs/getting-started/using-extensions">使用扩展</a>。在没有工具调用能力的情况下，goose 的自动化能力会明显受限。像 <code>qwen2.5</code> 这类支持 tool calling 的模型会更适合和 goose 搭配。</p>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="处理速率限制错误">处理速率限制错误<a href="#处理速率限制错误" class="hash-link" aria-label="Direct link to 处理速率限制错误" title="Direct link to 处理速率限制错误" translate="no">​</a></h3>
+<p>当 goose 调用 LLM Provider 时，可能会遇到 <code>429 error</code>（超过速率限制）。更稳妥的做法是优先选择自带更好限流处理能力的 Provider。详细建议可查看<a class="" href="/goose/zh-CN/docs/guides/handling-llm-rate-limits-with-goose">处理 LLM 速率限制</a>。</p>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="hermit-错误">Hermit 错误<a href="#hermit-错误" class="hash-link" aria-label="Direct link to Hermit 错误" title="Direct link to Hermit 错误" translate="no">​</a></h3>
+<p>如果你在 app 里安装扩展时看到 <code>hermit:fatal</code>，通常意味着本地 hermit 缓存需要清理。goose 会内置一份 hermit，用来确保 <code>npx</code> 和 <code>uvx</code> 可用且行为一致。如果你机器上存在旧版本缓存，可能需要手动删除。</p>
+<p>在 macOS 上可以执行：</p>
+<div class="language-sh codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-sh codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">sudo rm -rf ~/Library/Caches/hermit</span><br></span></code></pre></div></div>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="api-错误">API 错误<a href="#api-错误" class="hash-link" aria-label="Direct link to API 错误" title="Direct link to API 错误" translate="no">​</a></h3>
+<p>当 LLM Provider 的 API Token 配置不正确、额度用尽，或相关配置失效时，可能会看到类似下面的报错：</p>
+<div class="language-sh codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-sh codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">Traceback (most recent call last):</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">  File &quot;/Users/admin/.local/pipx/venvs/goose-ai/lib/python3.13/site-packages/exchange/providers/utils.py&quot;,</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">line 30, in raise_for_status</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    response.raise_for_status()</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    ~~~~~~~~~~~~~~~~~~~~~~~~~^^</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">  File &quot;/Users/admin/.local/pipx/venvs/goose-ai/lib/python3.13/site-packages/httpx/_models.py&quot;,</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">line 829, in raise_for_status</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    raise HTTPStatusError(message, request=request, response=self)</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">httpx.HTTPStatusError: Client error &#x27;404 Not Found&#x27; for url</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">&#x27;https://api.openai.com/v1/chat/completions&#x27;</span><br></span></code></pre></div></div>
+<p>这类问题通常意味着额度耗尽，或者 API Key 无效。可以按下面顺序检查：</p>
+<ol>
+<li class="">
+<p>登录对应 Provider 后台，确认额度是否足够</p>
+</li>
+<li class="">
+<p>重新配置 API Key：</p>
+<div class="language-sh codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-sh codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">goose configure</span><br></span></code></pre></div></div>
+</li>
+</ol>
+<p>完整 Provider 更新流程可参考<a class="" href="/goose/zh-CN/docs/getting-started/installation">安装与配置指南</a>。</p>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="github-copilot-provider-配置问题">GitHub Copilot Provider 配置问题<a href="#github-copilot-provider-配置问题" class="hash-link" aria-label="Direct link to GitHub Copilot Provider 配置问题" title="Direct link to GitHub Copilot Provider 配置问题" translate="no">​</a></h3>
+<p>如果你在配置 GitHub Copilot 作为 Provider 时遇到报错，可以按下面几种常见场景排查。</p>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="leadworker-模型导致的-oauth-冲突">Lead/Worker 模型导致的 OAuth 冲突<a href="#leadworker-模型导致的-oauth-冲突" class="hash-link" aria-label="Direct link to Lead/Worker 模型导致的 OAuth 冲突" title="Direct link to Lead/Worker 模型导致的 OAuth 冲突" translate="no">​</a></h4>
+<p>如果环境里已经配置了 <a class="" href="/goose/zh-CN/docs/tutorials/lead-worker">lead/worker model</a>，在进行 GitHub Copilot OAuth 配置时，可能会看到：</p>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">Failed to authenticate: Execution error: OAuth configuration not supported by this provider</span><br></span></code></pre></div></div>
+<p>处理方式：</p>
+<ol>
+<li class="">
+<p>临时注释或删除主配置文件 <code>~/.config/goose/config.yaml</code> 中的 lead/worker 变量：</p>
+<div class="language-yaml codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-yaml codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token comment" style="color:#999988;font-style:italic"># GOOSE_LEAD_MODEL: your-model</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"></span><span class="token comment" style="color:#999988;font-style:italic"># GOOSE_WORKER_MODEL: your-model</span><br></span></code></pre></div></div>
+</li>
+<li class="">
+<p>重新执行 <code>goose configure</code></p>
+</li>
+<li class="">
+<p>完成 GitHub Copilot 的 OAuth 流程</p>
+</li>
+<li class="">
+<p>按需恢复 lead/worker 配置</p>
+</li>
+</ol>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="容器环境与-keyring-问题">容器环境与 Keyring 问题<a href="#容器环境与-keyring-问题" class="hash-link" aria-label="Direct link to 容器环境与 Keyring 问题" title="Direct link to 容器环境与 Keyring 问题" translate="no">​</a></h4>
+<p>goose 会优先使用系统 keyring（例如 Linux 下通过 Secret Service/DBus）来安全存储 GitHub Copilot token。在容器或无桌面环境中，这些服务可能不可用，因此会导致 keyring 访问失败。</p>
+<p>如果你在 Docker 或无 keyring 支持的 Linux 环境中运行 goose，goose 有时会自动回退到基于文件的密钥存储。若自动回退没有生效，并且你看到如下错误：</p>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">Failed to save token: Failed to access keyring: &lt;error message&gt;</span><br></span></code></pre></div></div>
+<p>可以显式设置 <code>GOOSE_DISABLE_KEYRING</code>：</p>
+<div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">GOOSE_DISABLE_KEYRING=1 goose configure</span><br></span></code></pre></div></div>
+<p>如果你不希望把密钥写入 <code>secrets.yaml</code>，可以改用环境变量方式配置。</p>
+<p>更多说明见下方的<a href="#keychain-keyring-errors" class="">Keychain / Keyring 错误</a>。</p>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="新-recipe-警告">新 Recipe 警告<a href="#新-recipe-警告" class="hash-link" aria-label="Direct link to 新 Recipe 警告" title="Direct link to 新 Recipe 警告" translate="no">​</a></h3>
+<p>第一次在 goose Desktop 中执行某个 recipe 时，会出现 <code>New Recipe Warning</code> 对话框，让你先检查 recipe 的标题、描述和指令内容。如果你确认可信，可以点击 <code>Trust and Execute</code> 继续。同一个 recipe 只要内容不变，后续不会重复提示。</p>
+<p>这项机制的目的是避免你在不了解内容的情况下执行潜在有风险的 recipe 代码。</p>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="卸载-goose-或清除缓存数据">卸载 goose 或清除缓存数据<a href="#卸载-goose-或清除缓存数据" class="hash-link" aria-label="Direct link to 卸载 goose 或清除缓存数据" title="Direct link to 卸载 goose 或清除缓存数据" translate="no">​</a></h3>
+<p>在某些情况下，你可能需要彻底卸载 goose，或者在重装前清理本地数据。goose 在不同操作系统中会把日志、配置、会话和密钥保存在不同位置。</p>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="macos">macOS<a href="#macos" class="hash-link" aria-label="Direct link to macOS" title="Direct link to macOS" translate="no">​</a></h4>
+<p><strong>数据位置</strong></p>
+<ul>
+<li class=""><strong>日志与配置</strong>：<code>~/.config/goose</code></li>
+<li class=""><strong>应用数据</strong>：<code>~/Library/Application Support/Goose</code></li>
+<li class=""><strong>Secrets</strong>：macOS Keychain（凭据名通常为 <code>goose</code>）</li>
+</ul>
+<p><strong>清理步骤</strong></p>
+<ol>
+<li class="">
+<p>关闭所有 goose 进程（CLI 和 GUI）</p>
+</li>
+<li class="">
+<p>打开 Keychain Access，删除名为 <code>goose</code> 的凭据</p>
+</li>
+<li class="">
+<p>删除数据目录：</p>
+<div class="language-sh codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-sh codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">rm -rf ~/.config/goose</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">rm -rf ~/Library/Application\\ Support/goose</span><br></span></code></pre></div></div>
+</li>
+<li class="">
+<p>如果你使用的是 goose Desktop，再删除 Applications 里的 app</p>
+</li>
+</ol>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="linux">Linux<a href="#linux" class="hash-link" aria-label="Direct link to Linux" title="Direct link to Linux" translate="no">​</a></h4>
+<p><strong>数据位置</strong></p>
+<ul>
+<li class=""><strong>数据 / 会话</strong>：<code>~/.local/share/goose/</code></li>
+<li class=""><strong>日志</strong>：<code>~/.local/state/goose/</code></li>
+<li class=""><strong>配置</strong>：<code>~/.config/goose/</code></li>
+<li class=""><strong>Secrets</strong>：系统 keyring（如果可用）</li>
+</ul>
+<p><strong>清理步骤</strong></p>
+<ul>
+<li class="">
+<p>关闭所有 goose 进程（CLI 和 GUI）</p>
+</li>
+<li class="">
+<p>从系统 keyring 中清除相关 secrets（如果有）</p>
+</li>
+<li class="">
+<p>删除数据目录：</p>
+<div class="language-sh codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-sh codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">rm -rf ~/.local/share/goose/</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">rm -rf ~/.local/state/goose/</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">rm -rf ~/.config/goose/</span><br></span></code></pre></div></div>
+</li>
+</ul>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="windows">Windows<a href="#windows" class="hash-link" aria-label="Direct link to Windows" title="Direct link to Windows" translate="no">​</a></h4>
+<p><strong>数据位置</strong></p>
+<ul>
+<li class=""><strong>配置与数据</strong>：<code>%APPDATA%\\Block\\goose\\</code></li>
+<li class=""><strong>本地应用数据</strong>：<code>%LOCALAPPDATA%\\Block\\goose\\</code></li>
+<li class=""><strong>Secrets</strong>：Windows Credential Manager</li>
+</ul>
+<p><strong>清理步骤</strong></p>
+<ol>
+<li class="">
+<p>关闭所有 goose 进程（CLI 和 GUI）</p>
+</li>
+<li class="">
+<p>打开 Windows Credential Manager，删除与 <code>goose</code> 相关的凭据</p>
+</li>
+<li class="">
+<p>删除数据目录：</p>
+<div class="language-cmd codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-cmd codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">rmdir /s /q &quot;%APPDATA%\\Block\\goose&quot;</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">rmdir /s /q &quot;%LOCALAPPDATA%\\Block\\goose&quot;</span><br></span></code></pre></div></div>
+</li>
+<li class="">
+<p>如果使用的是 goose Desktop，可在系统设置的应用管理里卸载</p>
+</li>
+</ol>
+<p>完成清理后，如果你需要重新安装，可以回到标准安装流程重新开始。</p>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="macos-permission-issues">macOS 权限问题<a href="#macos-permission-issues" class="hash-link" aria-label="Direct link to macOS 权限问题" title="Direct link to macOS 权限问题" translate="no">​</a></h3>
+<p>如果你遇到 goose Desktop 启动后没有任何窗口，通常是文件或目录权限不正确导致的。最常见的情况是 goose 无法访问 <code>~/.config</code>，因而不能创建日志目录和日志文件。</p>
+<p>如果你在使用过程中发现工具无法创建文件或目录，也可能是同一类权限问题。</p>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="如何检查权限">如何检查权限<a href="#如何检查权限" class="hash-link" aria-label="Direct link to 如何检查权限" title="Direct link to 如何检查权限" translate="no">​</a></h4>
+<ol>
+<li class="">
+<p>打开 Terminal</p>
+</li>
+<li class="">
+<p>运行：</p>
+<div class="language-sh codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-sh codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">ls -ld ~/.config</span><br></span></code></pre></div></div>
+</li>
+</ol>
+<p><strong>示例输出：</strong></p>
+<div class="language-sh codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-sh codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">drwx------  7 yourusername  staff  224 Jan 15 12:00 /Users/yourusername/.config</span><br></span></code></pre></div></div>
+<p>这里的 <code>rwx</code> 表示当前用户对该目录具备读（r）、写（w）和执行（x）权限。如果你自己的权限位里没有 <code>rwx</code>，就需要手动修正。</p>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="如何修复权限">如何修复权限<a href="#如何修复权限" class="hash-link" aria-label="Direct link to 如何修复权限" title="Direct link to 如何修复权限" translate="no">​</a></h4>
+<ol>
+<li class="">
+<p>给 <code>~/.config</code> 增加正确权限：</p>
+<div class="language-sh codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-sh codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">chmod u+rw ~/.config</span><br></span></code></pre></div></div>
+<p>如果 <code>~/.config</code> 还不存在，先创建再授权：</p>
+<div class="language-sh codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-sh codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">mkdir -p ~/.config</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">chmod u+rw ~/.config</span><br></span></code></pre></div></div>
+</li>
+<li class="">
+<p>再次确认结果：</p>
+<div class="language-sh codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-sh codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">ls -ld ~/.config</span><br></span></code></pre></div></div>
+</li>
+</ol>
+<p>如果修完后问题仍然存在，可以尝试用管理员权限临时启动 goose，确认是否确实是权限导致：</p>
+<div class="language-sh codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-sh codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">sudo /Applications/Goose.app/Contents/MacOS/Goose</span><br></span></code></pre></div></div>
+<div class="theme-admonition theme-admonition-note admonition_xJq3 alert alert--secondary"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M6.3 5.69a.942.942 0 0 1-.28-.7c0-.28.09-.52.28-.7.19-.18.42-.28.7-.28.28 0 .52.09.7.28.18.19.28.42.28.7 0 .28-.09.52-.28.7a1 1 0 0 1-.7.3c-.28 0-.52-.11-.7-.3zM8 7.99c-.02-.25-.11-.48-.31-.69-.2-.19-.42-.3-.69-.31H6c-.27.02-.48.13-.69.31-.2.2-.3.44-.31.69h1v3c.02.27.11.5.31.69.2.2.42.31.69.31h1c.27 0 .48-.11.69-.31.2-.19.3-.42.31-.69H8V7.98v.01zM7 2.3c-3.14 0-5.7 2.54-5.7 5.68 0 3.14 2.56 5.7 5.7 5.7s5.7-2.55 5.7-5.7c0-3.15-2.56-5.69-5.7-5.69v.01zM7 .98c3.86 0 7 3.14 7 7s-3.14 7-7 7-7-3.12-7-7 3.14-7 7-7z"></path></svg></span>note</div><div class="admonitionContent_BuS1"><p>使用 <code>sudo</code> 启动 goose 可能会生成 root 拥有的文件，反而引出新的权限问题。这个方式只建议用于排查，不建议长期使用。</p></div></div>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="在系统设置里授予访问权限">在系统设置里授予访问权限<a href="#在系统设置里授予访问权限" class="hash-link" aria-label="Direct link to 在系统设置里授予访问权限" title="Direct link to 在系统设置里授予访问权限" translate="no">​</a></h4>
+<ol>
+<li class="">打开 <code>System Settings</code></li>
+<li class="">进入 <code>Privacy &amp; Security</code></li>
+<li class="">打开 <code>Files &amp; Folders</code></li>
+<li class="">给 goose 授权访问相关目录</li>
+</ol>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="keychain-keyring-errors">Keychain / Keyring 错误<a href="#keychain-keyring-errors" class="hash-link" aria-label="Direct link to Keychain / Keyring 错误" title="Direct link to Keychain / Keyring 错误" translate="no">​</a></h3>
+<p>goose 默认会使用系统 keyring（macOS 上是 keychain）来保存密钥。如果运行环境无法访问 keyring，或者系统本身没有可用的 keyring 支持，可能会看到下面这种错误：</p>
+<div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">Error Failed to access secure storage (keyring): Platform secure storage failure: DBus error: The name org.freedesktop.secrets was not provided by any .service files</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">Please check your system keychain and run &#x27;goose configure&#x27; again.</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">If your system is unable to use the keyring, please try setting secret key(s) via environment variables.</span><br></span></code></pre></div></div>
+<p>在部分环境里，goose 会自动回退到基于文件的密钥存储，详见下方的<a href="#keyring-cannot-be-accessed-automatic-fallback" class="">自动回退说明</a>。如果没有自动回退，你可以采用下面两种方式之一：</p>
+<ul>
+<li class="">
+<p>使用各 Provider 对应的环境变量。变量列表见<a class="" href="/goose/zh-CN/docs/getting-started/providers">支持的 LLM Providers</a>。</p>
+<ul>
+<li class="">当前 shell 会话临时生效：<!-- -->
+<div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">export GOOGLE_API_KEY=$YOUR_KEY_HERE</span><br></span></code></pre></div></div>
+</li>
+<li class="">若要长期生效，把它写入 <code>~/.bashrc</code>、<code>~/.zshrc</code> 或对应 shell 配置文件</li>
+</ul>
+</li>
+<li class="">
+<p>运行 <code>goose configure</code> 时，在保存到 keyring 的提示处选择 <code>No</code></p>
+<div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">$ goose configure</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">Welcome to goose! Let&#x27;s get you set up with a provider.</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">  you can rerun this command later to update your configuration</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">┌   goose-configure</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">│</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">◇  Which model provider should we use?</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">│  Google Gemini</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">│</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">◇  GOOGLE_API_KEY is set via environment variable</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">│</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">◇  Would you like to save this value to your keyring?</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">│  No</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">│</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">◇  Enter a model from that provider:</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">│  gemini-2.0-flash-exp</span><br></span></code></pre></div></div>
+</li>
+<li class="">
+<p>如果你希望显式禁用 keyring，可以设置 <code>GOOSE_DISABLE_KEYRING</code> 为任意值，强制改用文件存储：</p>
+<div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">GOOSE_DISABLE_KEYRING=1 goose configure</span><br></span></code></pre></div></div>
+</li>
+</ul>
+<p>禁用 keyring 后，或者 goose 因无法访问 keyring 自动回退到文件存储后，secrets 会保存在：</p>
+<ul>
+<li class="">macOS / Linux：<code>~/.config/goose/secrets.yaml</code></li>
+<li class="">Windows：<code>%APPDATA%\Block\goose\config\secrets.yaml</code></li>
+</ul>
+<p>更多细节见<a class="" href="/goose/zh-CN/docs/guides/config-files">配置文件</a>。</p>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="keyring-cannot-be-accessed-automatic-fallback">无法访问 Keyring 时的自动回退<a href="#keyring-cannot-be-accessed-automatic-fallback" class="hash-link" aria-label="Direct link to 无法访问 Keyring 时的自动回退" title="Direct link to 无法访问 Keyring 时的自动回退" translate="no">​</a></h3>
+<p>在某些平台上，如果 goose 发现系统 keyring 明显不可用，会自动改用文件方式保存 secrets。</p>
+<p>这种情况下，你可能会在日志中看到类似警告：</p>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">Keyring unavailable. Using file storage for secrets.</span><br></span></code></pre></div></div>
+<p>自动回退只对当前 goose 进程生效。下一次启动新会话时，goose 仍会重新尝试使用 keyring。</p>
+<p>如果你希望稳定地使用文件存储，而不是依赖自动判断，可以显式设置：</p>
+<div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">GOOSE_DISABLE_KEYRING=1 goose configure</span><br></span></code></pre></div></div>
+<p><code>secrets.yaml</code> 的位置说明见<a class="" href="/goose/zh-CN/docs/guides/config-files">配置文件</a>。</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="package-runner">Package Runner<a href="#package-runner" class="hash-link" aria-label="Direct link to Package Runner" title="Direct link to Package Runner" translate="no">​</a></h3>
+<p>许多外部扩展都依赖 package runner。如果你遇到下面这类错误：</p>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">Failed to start extension `{extension name}`: Could not run extension command (`{extension command}`): No such file or directory (os error 2)</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">Please check extension configuration for {extension name}.</span><br></span></code></pre></div></div>
+<p>通常意味着扩展本身还没有被正确安装，或者系统里缺少对应的 package runner。</p>
+<p>例如 GitHub 扩展的命令是 <code>npx -y @modelcontextprotocol/server-github</code>。要运行这个命令，你的系统里需要先安装 <a href="https://nodejs.org/" target="_blank" rel="noopener noreferrer" class="">Node.js</a>。</p>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="windows-下-nodejs-扩展无法激活">Windows 下 Node.js 扩展无法激活<a href="#windows-下-nodejs-扩展无法激活" class="hash-link" aria-label="Direct link to Windows 下 Node.js 扩展无法激活" title="Direct link to Windows 下 Node.js 扩展无法激活" translate="no">​</a></h3>
+<p>如果你在 Windows 上激活基于 Node.js 的扩展时看到 <code>Node.js installer script not found</code>，通常是因为 goose 没能在预期路径中找到 Node.js。</p>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="症状">症状<a href="#症状" class="hash-link" aria-label="Direct link to 症状" title="Direct link to 症状" translate="no">​</a></h4>
+<ul>
+<li class=""><code>node -v</code> 和 <code>npm -v</code> 正常</li>
+<li class="">其它扩展（例如 Python 扩展）能正常工作</li>
+<li class="">只有 Node.js 扩展激活失败</li>
+</ul>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="解决方式">解决方式<a href="#解决方式" class="hash-link" aria-label="Direct link to 解决方式" title="Direct link to 解决方式" translate="no">​</a></h4>
+<p>这通常出现在 Node.js 被装到了非标准路径，例如 <code>D:\Program Files\nodejs\</code>，而 goose 默认查找的是 <code>C:\Program Files\nodejs\</code>。</p>
+<ol>
+<li class="">
+<p>先检查 Node.js 的安装路径：</p>
+<div class="language-powershell codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-powershell codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">where.exe node</span><br></span></code></pre></div></div>
+</li>
+<li class="">
+<p>如果不在 <code>C:\Program Files\nodejs\</code>，可以创建符号链接：</p>
+<div class="language-powershell codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-powershell codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">mklink /D &quot;C:\Program Files\nodejs&quot; &quot;D:\Program Files\nodejs&quot;</span><br></span></code></pre></div></div>
+<p>把 <code>D:\Program Files\nodejs</code> 替换成你真实的安装路径。</p>
+</li>
+<li class="">
+<p>重启 goose 后再试一次。</p>
+</li>
+</ol>
+<p>这样做的作用是让 goose 能在它预期的位置找到 Node.js，同时不影响你当前的实际安装目录。</p>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="malicious-package-detected">检测到恶意软件包<a href="#malicious-package-detected" class="hash-link" aria-label="Direct link to 检测到恶意软件包" title="Direct link to 检测到恶意软件包" translate="no">​</a></h3>
+<p>如果你在使用扩展时看到 “blocked malicious package” 一类错误，表示某个扩展依赖的包被识别为恶意软件。错误消息通常会包含具体包名，例如：</p>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">Blocked malicious package: package-name@1.0.0 (npm). OSV MAL advisories: MAL-2024-1234</span><br></span></code></pre></div></div>
+<p>处理建议：</p>
+<ol>
+<li class="">优先寻找替代方案，可在<a class="" href="/goose/extensions">扩展目录</a>或 <a href="https://www.pulsemcp.com/servers" target="_blank" rel="noopener noreferrer" class="">PulseMCP</a> 中查找同类扩展</li>
+<li class="">如有需要，可进一步核对扩展来源、包名和发布者</li>
+<li class="">如果你判断这是误报，可以到 <a href="https://github.com/block/goose/issues" target="_blank" rel="noopener noreferrer" class="">GitHub issue</a> 反馈</li>
+</ol>
+<p>这项安全检查只针对本地执行、并使用 PyPI（<code>uvx</code>）或 NPM（<code>npx</code>）的外部扩展。它依赖 OSV 的实时数据；如果安全服务暂时不可用，扩展仍会按正常流程安装。</p>
+<p>最佳实践仍然是：只安装来自可信官方来源的扩展。</p>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="macos-permission-issues">macOS 权限问题<a href="#macos-permission-issues" class="hash-link" aria-label="Direct link to macOS 权限问题" title="Direct link to macOS 权限问题" translate="no">​</a></h3>
+<p>如果你遇到 goose Desktop 启动后没有任何窗口，通常是文件或目录权限不正确导致的。最常见的情况是 goose 无法访问 <code>~/.config</code>，因而不能创建日志目录和日志文件。</p>
+<p>如果你在使用过程中发现工具无法创建文件或目录，也可能是同一类权限问题。</p>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="如何检查权限-1">如何检查权限<a href="#如何检查权限-1" class="hash-link" aria-label="Direct link to 如何检查权限" title="Direct link to 如何检查权限" translate="no">​</a></h4>
+<ol>
+<li class="">
+<p>打开 Terminal</p>
+</li>
+<li class="">
+<p>运行：</p>
+<div class="language-sh codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-sh codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">ls -ld ~/.config</span><br></span></code></pre></div></div>
+</li>
+</ol>
+<p><strong>示例输出：</strong></p>
+<div class="language-sh codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-sh codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">drwx------  7 yourusername  staff  224 Jan 15 12:00 /Users/yourusername/.config</span><br></span></code></pre></div></div>
+<p>这里的 <code>rwx</code> 表示当前用户对该目录具备读（r）、写（w）和执行（x）权限。如果你自己的权限位里没有 <code>rwx</code>，就需要手动修正。</p>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="如何修复权限-1">如何修复权限<a href="#如何修复权限-1" class="hash-link" aria-label="Direct link to 如何修复权限" title="Direct link to 如何修复权限" translate="no">​</a></h4>
+<ol>
+<li class="">
+<p>给 <code>~/.config</code> 增加正确权限：</p>
+<div class="language-sh codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-sh codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">chmod u+rw ~/.config</span><br></span></code></pre></div></div>
+<p>如果 <code>~/.config</code> 还不存在，先创建再授权：</p>
+<div class="language-sh codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-sh codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">mkdir -p ~/.config</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">chmod u+rw ~/.config</span><br></span></code></pre></div></div>
+</li>
+<li class="">
+<p>再次确认结果：</p>
+<div class="language-sh codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-sh codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">ls -ld ~/.config</span><br></span></code></pre></div></div>
+</li>
+</ol>
+<p>如果修完后问题仍然存在，可以尝试用管理员权限临时启动 goose，确认是否确实是权限导致：</p>
+<div class="language-sh codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-sh codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">sudo /Applications/Goose.app/Contents/MacOS/Goose</span><br></span></code></pre></div></div>
+<div class="theme-admonition theme-admonition-note admonition_xJq3 alert alert--secondary"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M6.3 5.69a.942.942 0 0 1-.28-.7c0-.28.09-.52.28-.7.19-.18.42-.28.7-.28.28 0 .52.09.7.28.18.19.28.42.28.7 0 .28-.09.52-.28.7a1 1 0 0 1-.7.3c-.28 0-.52-.11-.7-.3zM8 7.99c-.02-.25-.11-.48-.31-.69-.2-.19-.42-.3-.69-.31H6c-.27.02-.48.13-.69.31-.2.2-.3.44-.31.69h1v3c.02.27.11.5.31.69.2.2.42.31.69.31h1c.27 0 .48-.11.69-.31.2-.19.3-.42.31-.69H8V7.98v.01zM7 2.3c-3.14 0-5.7 2.54-5.7 5.68 0 3.14 2.56 5.7 5.7 5.7s5.7-2.55 5.7-5.7c0-3.15-2.56-5.69-5.7-5.69v.01zM7 .98c3.86 0 7 3.14 7 7s-3.14 7-7 7-7-3.12-7-7 3.14-7 7-7z"></path></svg></span>note</div><div class="admonitionContent_BuS1"><p>使用 <code>sudo</code> 启动 goose 可能会生成 root 拥有的文件，反而引出新的权限问题。这个方式只建议用于排查，不建议长期使用。</p></div></div>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="在系统设置里授予访问权限-1">在系统设置里授予访问权限<a href="#在系统设置里授予访问权限-1" class="hash-link" aria-label="Direct link to 在系统设置里授予访问权限" title="Direct link to 在系统设置里授予访问权限" translate="no">​</a></h4>
+<ol>
+<li class="">打开 <code>System Settings</code></li>
+<li class="">进入 <code>Privacy &amp; Security</code></li>
+<li class="">打开 <code>Files &amp; Folders</code></li>
+<li class="">给 goose 授权访问相关目录</li>
+</ol>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="wsl-中使用-ollama-provider-的连接错误">WSL 中使用 Ollama Provider 的连接错误<a href="#wsl-中使用-ollama-provider-的连接错误" class="hash-link" aria-label="Direct link to WSL 中使用 Ollama Provider 的连接错误" title="Direct link to WSL 中使用 Ollama Provider 的连接错误" translate="no">​</a></h3>
+<p>如果你在 WSL 里把 Ollama 配成 Provider 时看到下面这类错误：</p>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">Execution error: error sending request for url (http://localhost:11434/v1/chat/completions)</span><br></span></code></pre></div></div>
+<p>通常意味着 WSL 里的 <code>localhost</code> 无法直接访问宿主机上的 Ollama。</p>
+<ol>
+<li class="">
+<p>先检查服务是否可达：</p>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">curl http://localhost:11434/api/tags</span><br></span></code></pre></div></div>
+</li>
+<li class="">
+<p>如果返回 <code>failed to connect</code>，说明 WSL 可能需要改用宿主机 IP。可以运行：</p>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">ip route show | grep -i default | awk &#x27;{ print $3 }&#x27;</span><br></span></code></pre></div></div>
+</li>
+<li class="">
+<p>把得到的 IP 写进 goose 配置，替换 <code>localhost</code>。例如：</p>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">http://172.24.80.1:11434</span><br></span></code></pre></div></div>
+</li>
+</ol>
+<p>如果仍然连接失败，并且你使用的是 Windows 11 22H2 或以上版本，也可以尝试 WSL 的 <a href="https://learn.microsoft.com/en-us/windows/wsl/networking#mirrored-mode-networking" target="_blank" rel="noopener noreferrer" class="">Mirrored Networking</a>。</p>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="corporate-proxy-or-firewall-issues">企业代理或防火墙问题<a href="#corporate-proxy-or-firewall-issues" class="hash-link" aria-label="Direct link to 企业代理或防火墙问题" title="Direct link to 企业代理或防火墙问题" translate="no">​</a></h3>
+<p>如果你处在企业代理或防火墙环境中，goose 无法连接到 LLM Provider 时，常见报错类似：</p>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">error sending request for url (https://api.openai.com/...)</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">failed to connect to api.openai.com</span><br></span></code></pre></div></div>
+<p>goose 支持通过标准环境变量和系统代理设置来配置 HTTP/HTTPS 代理；当两者同时存在时，环境变量优先。</p>
+<p>处理方式：</p>
+<ol>
+<li class="">
+<p>配置<a class="" href="/goose/zh-CN/docs/guides/environment-variables#network-configuration">代理环境变量</a>：</p>
+<div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">export HTTPS_PROXY=&quot;http://proxy.company.com:8080&quot;</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">export NO_PROXY=&quot;localhost,127.0.0.1,.internal&quot;</span><br></span></code></pre></div></div>
+</li>
+<li class="">
+<p>或者使用系统代理设置：</p>
+<ul>
+<li class="">macOS：System Settings → Network → 选择连接 → Details → Proxies</li>
+<li class="">Windows：Settings → Network &amp; Internet → Proxy</li>
+</ul>
+</li>
+<li class="">
+<p>配置完成后重启 goose</p>
+</li>
+</ol>
+<p>如果问题依然存在，再检查：</p>
+<ul>
+<li class="">代理地址和端口是否正确</li>
+<li class="">是否需要认证信息，例如 <code>http://username:password@proxy:port</code></li>
+<li class="">代理是否允许访问你的 LLM Provider 域名</li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="airgapped--离线环境问题">Airgapped / 离线环境问题<a href="#airgapped--离线环境问题" class="hash-link" aria-label="Direct link to Airgapped / 离线环境问题" title="Direct link to Airgapped / 离线环境问题" translate="no">​</a></h3>
+<p>如果你在 airgapped、完全离线、或网络严格受限的环境中使用 goose，可能会遇到 MCP Server 扩展无法激活、或运行时依赖下载失败的问题。</p>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="常见症状">常见症状<a href="#常见症状" class="hash-link" aria-label="Direct link to 常见症状" title="Direct link to 常见症状" translate="no">​</a></h4>
+<ul>
+<li class="">扩展激活失败，并提示缺少运行时环境</li>
+<li class="">日志里出现 <code>hermit:fatal</code> 或下载失败</li>
+<li class="">个人电脑上能正常工作，但公司网络中失败</li>
+<li class="">错误消息类似：<code>Failed to start extension: Could not run extension command</code></li>
+</ul>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="原因">原因<a href="#原因" class="hash-link" aria-label="Direct link to 原因" title="Direct link to 原因" translate="no">​</a></h4>
+<p>goose Desktop 使用打包好的 <strong>shim</strong>（例如 <code>npx</code> 和 <code>uvx</code> 的封装版本），它们会通过 Hermit 自动下载运行时。在受限网络中，这些下载通常会失败。</p>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="解决方式改用自定义命令名">解决方式：改用自定义命令名<a href="#解决方式改用自定义命令名" class="hash-link" aria-label="Direct link to 解决方式：改用自定义命令名" title="Direct link to 解决方式：改用自定义命令名" translate="no">​</a></h4>
+<ol>
+<li class="">
+<p>在系统上为 package runner 创建另外的命令名：</p>
+<div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain"># For uvx (Python packages)</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">ln -s /usr/local/bin/uvx /usr/local/bin/runuv</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"># For npx (Node.js packages)</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">ln -s /usr/local/bin/npx /usr/local/bin/runnpx</span><br></span></code></pre></div></div>
+</li>
+<li class="">
+<p>更新 MCP Server 配置，改用这些自定义命令名。</p>
+<p>原始写法：</p>
+<div class="language-yaml codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-yaml codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token key atrule" style="color:#00a4db">extensions</span><span class="token punctuation" style="color:#393A34">:</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">  </span><span class="token key atrule" style="color:#00a4db">example</span><span class="token punctuation" style="color:#393A34">:</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    </span><span class="token key atrule" style="color:#00a4db">cmd</span><span class="token punctuation" style="color:#393A34">:</span><span class="token plain"> uvx</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    </span><span class="token key atrule" style="color:#00a4db">args</span><span class="token punctuation" style="color:#393A34">:</span><span class="token plain"> </span><span class="token punctuation" style="color:#393A34">[</span><span class="token plain">mcp</span><span class="token punctuation" style="color:#393A34">-</span><span class="token plain">server</span><span class="token punctuation" style="color:#393A34">-</span><span class="token plain">example</span><span class="token punctuation" style="color:#393A34">]</span><br></span></code></pre></div></div>
+<p>替换为：</p>
+<div class="language-yaml codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-yaml codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token key atrule" style="color:#00a4db">extensions</span><span class="token punctuation" style="color:#393A34">:</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">  </span><span class="token key atrule" style="color:#00a4db">example</span><span class="token punctuation" style="color:#393A34">:</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    </span><span class="token key atrule" style="color:#00a4db">cmd</span><span class="token punctuation" style="color:#393A34">:</span><span class="token plain"> runuv  </span><span class="token comment" style="color:#999988;font-style:italic"># This bypasses goose&#x27;s shims</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    </span><span class="token key atrule" style="color:#00a4db">args</span><span class="token punctuation" style="color:#393A34">:</span><span class="token plain"> </span><span class="token punctuation" style="color:#393A34">[</span><span class="token plain">mcp</span><span class="token punctuation" style="color:#393A34">-</span><span class="token plain">server</span><span class="token punctuation" style="color:#393A34">-</span><span class="token plain">example</span><span class="token punctuation" style="color:#393A34">]</span><br></span></code></pre></div></div>
+</li>
+<li class="">
+<p>之所以有效，是因为 goose 只会把已知命令名（如 <code>npx</code>、<code>uvx</code>、<code>jbang</code>）替换成自己的 shim。自定义命令名会原样透传给系统里的真实可执行文件。</p>
+</li>
+<li class="">
+<p>如果在企业代理或完全离线环境中，上述方式仍不足以解决问题，通常就需要进一步定制并打包 goose Desktop，让它使用符合你网络约束的 shim、证书或代理配置。</p>
+</li>
+</ol>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="还需要帮助">还需要帮助？<a href="#还需要帮助" class="hash-link" aria-label="Direct link to 还需要帮助？" title="Direct link to 还需要帮助？" translate="no">​</a></h3>
+<p>如果问题还没解决，可以继续到 <a href="https://discord.gg/goose-oss" target="_blank" rel="noopener noreferrer" class="">Discord 社区</a> 求助。</p>
+<div class="theme-admonition theme-admonition-tip admonition_xJq3 alert alert--success"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 12 16"><path fill-rule="evenodd" d="M6.5 0C3.48 0 1 2.19 1 5c0 .92.55 2.25 1 3 1.34 2.25 1.78 2.78 2 4v1h5v-1c.22-1.22.66-1.75 2-4 .45-.75 1-2.08 1-3 0-2.81-2.48-5-5.5-5zm3.64 7.48c-.25.44-.47.8-.67 1.11-.86 1.41-1.25 2.06-1.45 3.23-.02.05-.02.11-.02.17H5c0-.06 0-.13-.02-.17-.2-1.17-.59-1.83-1.45-3.23-.2-.31-.42-.67-.67-1.11C2.44 6.78 2 5.65 2 5c0-2.2 2.02-4 4.5-4 1.22 0 2.36.42 3.22 1.19C10.55 2.94 11 3.94 11 5c0 .66-.44 1.78-.86 2.48zM4 14h5c-.23 1.14-1.3 2-2.5 2s-2.27-.86-2.5-2z"></path></svg></span>tip</div><div class="admonitionContent_BuS1"><p>如果你能同时附上<a class="" href="/goose/zh-CN/docs/troubleshooting/diagnostics-and-reporting#diagnostics-system">诊断包</a>，通常能更快定位问题。</p></div></div></div></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/goose/zh-CN/docs/troubleshooting/diagnostics-and-reporting"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">Diagnostics and Reporting</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#goose-会修改文件" class="table-of-contents__link toc-highlight">goose 会修改文件</a></li><li><a href="#中断-goose" class="table-of-contents__link toc-highlight">中断 goose</a></li><li><a href="#stuck-in-a-loop-or-unresponsive" class="table-of-contents__link toc-highlight">卡在循环里或没有响应</a></li><li><a href="#避免长时间不退出的命令" class="table-of-contents__link toc-highlight">避免长时间不退出的命令</a></li><li><a href="#上下文长度超限" class="table-of-contents__link toc-highlight">上下文长度超限</a></li><li><a href="#使用-ollama-provider" class="table-of-contents__link toc-highlight">使用 Ollama Provider</a></li><li><a href="#处理速率限制错误" class="table-of-contents__link toc-highlight">处理速率限制错误</a></li><li><a href="#hermit-错误" class="table-of-contents__link toc-highlight">Hermit 错误</a></li><li><a href="#api-错误" class="table-of-contents__link toc-highlight">API 错误</a></li><li><a href="#github-copilot-provider-配置问题" class="table-of-contents__link toc-highlight">GitHub Copilot Provider 配置问题</a></li><li><a href="#新-recipe-警告" class="table-of-contents__link toc-highlight">新 Recipe 警告</a></li><li><a href="#卸载-goose-或清除缓存数据" class="table-of-contents__link toc-highlight">卸载 goose 或清除缓存数据</a></li><li><a href="#macos-permission-issues" class="table-of-contents__link toc-highlight">macOS 权限问题</a></li><li><a href="#keychain-keyring-errors" class="table-of-contents__link toc-highlight">Keychain / Keyring 错误</a></li><li><a href="#keyring-cannot-be-accessed-automatic-fallback" class="table-of-contents__link toc-highlight">无法访问 Keyring 时的自动回退</a></li><li><a href="#package-runner" class="table-of-contents__link toc-highlight">Package Runner</a></li><li><a href="#windows-下-nodejs-扩展无法激活" class="table-of-contents__link toc-highlight">Windows 下 Node.js 扩展无法激活</a></li><li><a href="#malicious-package-detected" class="table-of-contents__link toc-highlight">检测到恶意软件包</a></li><li><a href="#macos-permission-issues" class="table-of-contents__link toc-highlight">macOS 权限问题</a></li><li><a href="#wsl-中使用-ollama-provider-的连接错误" class="table-of-contents__link toc-highlight">WSL 中使用 Ollama Provider 的连接错误</a></li><li><a href="#corporate-proxy-or-firewall-issues" class="table-of-contents__link toc-highlight">企业代理或防火墙问题</a></li><li><a href="#airgapped--离线环境问题" class="table-of-contents__link toc-highlight">Airgapped / 离线环境问题</a></li><li><a href="#还需要帮助" class="table-of-contents__link toc-highlight">还需要帮助？</a></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer"><div class="container container-fluid"><div class="row footer__links"><div class="theme-layout-footer-column col footer__col"><div class="footer__title">Quick Links</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/goose/docs/getting-started/installation">Install goose</a></li><li class="footer__item"><a class="footer__link-item" href="/goose/extensions">Extensions</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">Community</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/goose/community">Spotlight</a></li><li class="footer__item"><a href="https://discord.gg/goose-oss" target="_blank" rel="noopener noreferrer" class="footer__link-item">Discord<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a href="https://www.youtube.com/@goose-oss" target="_blank" rel="noopener noreferrer" class="footer__link-item">YouTube<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a href="https://www.linkedin.com/company/goose-oss" target="_blank" rel="noopener noreferrer" class="footer__link-item">LinkedIn<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a href="https://x.com/goose_oss" target="_blank" rel="noopener noreferrer" class="footer__link-item">Twitter / X<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a href="https://bsky.app/profile/opensource.block.xyz" target="_blank" rel="noopener noreferrer" class="footer__link-item">BlueSky<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a href="https://njump.me/opensource@block.xyz" target="_blank" rel="noopener noreferrer" class="footer__link-item">Nostr<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">More</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/goose/blog">Blog</a></li><li class="footer__item"><a href="https://github.com/block/goose" target="_blank" rel="noopener noreferrer" class="footer__link-item">GitHub<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li></ul></div></div><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2026 Block, Inc.</div></div></div></footer></div>
+<script src="/goose/inkeepChatButton.js" type="module"></script>
+<div id="inkeepSearchBar"></div>
+<script>(()=>{const e=document.getElementById("inkeepSearchBar");new MutationObserver(t=>{const n=document.getElementById("inkeep");n&&n.appendChild(e)}).observe(document.documentElement,{attributes:!0})})()</script>
+<script src="/goose/inkeepSearchBar.js" type="module"></script></body>
+</html>
